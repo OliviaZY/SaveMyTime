@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474D5E48209147A1001199E7 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D5E47209147A1001199E7 /* DrawerViewController.swift */; };
+		474D5E4A209147AF001199E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D5E49209147AF001199E7 /* MainViewController.swift */; };
 		5D91A2327E720D7C5A187938 /* Pods_SaveMyTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBACFD0A4936403907836B15 /* Pods_SaveMyTime.framework */; };
-		A0824D1D2090FAE80019C6C3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0824D1A2090FAE80019C6C3 /* MainViewController.swift */; };
-		A0824D1F2090FAE80019C6C3 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0824D1C2090FAE80019C6C3 /* DrawerViewController.swift */; };
 		A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */; };
 		A0B84C422071E17E009B34D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B84C412071E17E009B34D6 /* ViewController.swift */; };
 		A0B84C452071E17E009B34D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B84C432071E17E009B34D6 /* Main.storyboard */; };
@@ -31,8 +31,8 @@
 /* Begin PBXFileReference section */
 		102878820469CF5D3C953781 /* Pods-SaveMyTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.debug.xcconfig"; sourceTree = "<group>"; };
 		1CFD217EFF9B54E1801063B6 /* Pods-SaveMyTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.release.xcconfig"; sourceTree = "<group>"; };
-		A0824D1A2090FAE80019C6C3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = KYDrawerController/Example/Code/Code/MainViewController.swift; sourceTree = SOURCE_ROOT; };
-		A0824D1C2090FAE80019C6C3 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawerViewController.swift; path = KYDrawerController/Example/Code/Code/DrawerViewController.swift; sourceTree = SOURCE_ROOT; };
+		474D5E47209147A1001199E7 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		474D5E49209147AF001199E7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "../../../../Downloads/KYDrawerController-master/Example/Code/Code/MainViewController.swift"; sourceTree = "<group>"; };
 		A0B84C3C2071E17D009B34D6 /* SaveMyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveMyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B84C412071E17E009B34D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		A0B84C3E2071E17D009B34D6 /* SaveMyTime */ = {
 			isa = PBXGroup;
 			children = (
-				A0824D1C2090FAE80019C6C3 /* DrawerViewController.swift */,
-				A0824D1A2090FAE80019C6C3 /* MainViewController.swift */,
+				474D5E49209147AF001199E7 /* MainViewController.swift */,
+				474D5E47209147A1001199E7 /* DrawerViewController.swift */,
 				A0B84C552071EB70009B34D6 /* supportingImages */,
 				A0B84C542071E977009B34D6 /* fa-regular-400.ttf */,
 				A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */,
@@ -260,11 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474D5E4A209147AF001199E7 /* MainViewController.swift in Sources */,
 				A0B84C422071E17E009B34D6 /* ViewController.swift in Sources */,
 				A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */,
 				A0B84C482071E17E009B34D6 /* SaveMyTime.xcdatamodeld in Sources */,
-				A0824D1D2090FAE80019C6C3 /* MainViewController.swift in Sources */,
-				A0824D1F2090FAE80019C6C3 /* DrawerViewController.swift in Sources */,
+				474D5E48209147A1001199E7 /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
