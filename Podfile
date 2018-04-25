@@ -6,5 +6,6 @@ target 'SaveMyTime' do
   use_frameworks!
 
   # Pods for SaveMyTime
-  pod 'MSDynamicsDrawerViewController'
+#  pod 'MSDynamicsDrawerViewController'
+  pod 'KYDrawerController'
 end

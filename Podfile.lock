@@ -1,16 +1,16 @@
 PODS:
-  - MSDynamicsDrawerViewController (1.5.1)
+  - KYDrawerController (2.0.4)
 
 DEPENDENCIES:
-  - MSDynamicsDrawerViewController
+  - KYDrawerController
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - MSDynamicsDrawerViewController
+    - KYDrawerController
 
 SPEC CHECKSUMS:
-  MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
+  KYDrawerController: cf5839877c442132123e9d482f458821026defdf
 
-PODFILE CHECKSUM: 9097bba46fdf631d26740e4852163861e8508b4f
+PODFILE CHECKSUM: 5995b454aec6d0e2be16fc1ed45d36e48ded8609
 
 COCOAPODS: 1.5.0
