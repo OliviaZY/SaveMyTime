@@ -1,0 +1,16 @@
+PODS:
+  - MSDynamicsDrawerViewController (1.5.1)
+
+DEPENDENCIES:
+  - MSDynamicsDrawerViewController
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - MSDynamicsDrawerViewController
+
+SPEC CHECKSUMS:
+  MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
+
+PODFILE CHECKSUM: 9097bba46fdf631d26740e4852163861e8508b4f
+
+COCOAPODS: 1.5.0
