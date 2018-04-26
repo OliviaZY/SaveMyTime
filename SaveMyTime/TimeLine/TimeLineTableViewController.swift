@@ -1,18 +1,11 @@
-//
-//  TimeLineTableViewController.swift
-//  SaveMyTime
-//
-//  Created by Fred Zhang on 4/26/18.
-//  Copyright © 2018 Yuan zhou. All rights reserved.
-//
-
 import UIKit
 
 class TimeLineTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "TimeLine"
+        self.setUpDrawer()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

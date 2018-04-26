@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4732AF942092072100A2601C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732AF932092072100A2601C /* NavigationViewController.swift */; };
 		474D5E48209147A1001199E7 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D5E47209147A1001199E7 /* DrawerViewController.swift */; };
 		478259522091B37300221820 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478259502091B37300221820 /* TimeLineTableViewController.swift */; };
 		478259922091F96400221820 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478259912091F96400221820 /* ProfileViewController.swift */; };
@@ -33,7 +32,6 @@
 /* Begin PBXFileReference section */
 		102878820469CF5D3C953781 /* Pods-SaveMyTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.debug.xcconfig"; sourceTree = "<group>"; };
 		1CFD217EFF9B54E1801063B6 /* Pods-SaveMyTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.release.xcconfig"; sourceTree = "<group>"; };
-		4732AF932092072100A2601C /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		474D5E47209147A1001199E7 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		478259502091B37300221820 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		478259912091F96400221820 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		A0B84C3E2071E17D009B34D6 /* SaveMyTime */ = {
 			isa = PBXGroup;
 			children = (
-				4732AF932092072100A2601C /* NavigationViewController.swift */,
 				478259902091F96400221820 /* Profile */,
 				4782594F2091B37300221820 /* TimeLine */,
 				47F03F2A2091513F007C3316 /* MenuTableViewController.swift */,
@@ -282,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4732AF942092072100A2601C /* NavigationViewController.swift in Sources */,
 				47F03F2B2091513F007C3316 /* MenuTableViewController.swift in Sources */,
 				A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */,
 				478259522091B37300221820 /* TimeLineTableViewController.swift in Sources */,
