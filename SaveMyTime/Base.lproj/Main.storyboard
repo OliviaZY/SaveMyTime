@@ -13,7 +13,7 @@
         <!--Timeline-->
         <scene sceneID="MlU-Fv-fbO">
             <objects>
-                <tableViewController id="eIQ-Ks-gSH" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TimeLineTableViewController" id="eIQ-Ks-gSH" customClass="TimeLineTableViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhR-Ao-ShR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +124,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVH-Wi-IC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="642"/>
+            <point key="canvasLocation" x="3134" y="826"/>
         </scene>
         <!--Drawer Controller-->
         <scene sceneID="GPw-1b-61S">
@@ -231,10 +231,10 @@
             </objects>
             <point key="canvasLocation" x="1512" y="-93"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="ozl-dr-Llr">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigation" id="OZt-MO-Amp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigation" id="OZt-MO-Amp" customClass="NavigationViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNV-Qf-P1o">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="1512" y="827"/>
         </scene>
-        <!--MainViewController-->
+        <!--Profile-->
         <scene sceneID="h3l-ZE-TQU">
             <objects>
-                <viewController storyboardIdentifier="MainController" id="oJz-b2-Drx" customClass="ProfileViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="oJz-b2-Drx" customClass="ProfileViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Yb-Ow-JBd"/>
                         <viewControllerLayoutGuide type="bottom" id="wsi-TA-NnX"/>
@@ -261,7 +261,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hBk-er-ad1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MainViewController" id="lL8-u0-VlL">
+                    <navigationItem key="navigationItem" title="Profile" id="lL8-u0-VlL">
                         <barButtonItem key="leftBarButtonItem" title="Open" id="3dX-FJ-2Mm">
                             <connections>
                                 <action selector="clickedOpen:" destination="oJz-b2-Drx" id="A33-vx-Mwy"/>

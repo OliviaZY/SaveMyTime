@@ -54,13 +54,13 @@ class MenuTableViewController: UITableViewController {
         if (self.navigateViewControllers[index] == nil) {
         switch (index) {
         case 0:
-            self.navigateViewControllers[0] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
+            self.navigateViewControllers[0] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TimeLineTableViewController")
             self.navigateViewControllers[0]?.view.backgroundColor = UIColor.red
         case 1:
-            self.navigateViewControllers[1] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
+            self.navigateViewControllers[1] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
             self.navigateViewControllers[1]?.view.backgroundColor = UIColor.blue
         case 2:
-            self.navigateViewControllers[2] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
+            self.navigateViewControllers[2] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
             self.navigateViewControllers[2]?.view.backgroundColor = UIColor.yellow
         default:
             break
