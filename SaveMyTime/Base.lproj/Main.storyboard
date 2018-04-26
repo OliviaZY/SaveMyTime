@@ -124,7 +124,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVH-Wi-IC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="1609"/>
+            <point key="canvasLocation" x="3180" y="642"/>
         </scene>
         <!--Drawer Controller-->
         <scene sceneID="GPw-1b-61S">
@@ -174,7 +174,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F5p-AM-AN8">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="TimeLine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F5p-AM-AN8">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -191,7 +191,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v2z-Ck-Im4">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v2z-Ck-Im4">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -234,6 +234,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ozl-dr-Llr">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJL-ka-cJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MainNavigation" id="OZt-MO-Amp" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNV-Qf-P1o">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -243,14 +244,13 @@
                         <segue destination="oJz-b2-Drx" kind="relationship" relationship="rootViewController" id="ZK7-J0-UmR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jJL-ka-cJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1512" y="827"/>
         </scene>
         <!--MainViewController-->
         <scene sceneID="h3l-ZE-TQU">
             <objects>
-                <viewController storyboardIdentifier="MainController" id="oJz-b2-Drx" customClass="MainViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainController" id="oJz-b2-Drx" customClass="ProfileViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Yb-Ow-JBd"/>
                         <viewControllerLayoutGuide type="bottom" id="wsi-TA-NnX"/>

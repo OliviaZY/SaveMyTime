@@ -43,22 +43,31 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
-        let navController = UINavigationController(rootViewController: viewController)
-        switch (indexPath.row) {
-        case 0:
-            viewController.view.backgroundColor = UIColor.red
-        case 1:
-            viewController.view.backgroundColor = UIColor.blue
-        case 2:
-            viewController.view.backgroundColor = UIColor.white
-        default:
-            break
-        }
-        self.elDrawer?.mainViewController = navController
+        let viewController: UIViewController = self.getNavigateToViewController(indexPath.row)
+        self.elDrawer?.mainViewController = UINavigationController(rootViewController: viewController)
         self.elDrawer?.setDrawerState(KYDrawerController.DrawerState.closed, animated: true)
     }
     
+    var navigateViewControllers = [Int: UIViewController]()
+    
+    func getNavigateToViewController(_ index: Int) -> UIViewController {
+        if (self.navigateViewControllers[index] == nil) {
+        switch (index) {
+        case 0:
+            self.navigateViewControllers[0] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
+            self.navigateViewControllers[0]?.view.backgroundColor = UIColor.red
+        case 1:
+            self.navigateViewControllers[1] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
+            self.navigateViewControllers[1]?.view.backgroundColor = UIColor.blue
+        case 2:
+            self.navigateViewControllers[2] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController")
+            self.navigateViewControllers[2]?.view.backgroundColor = UIColor.yellow
+        default:
+            break
+        }
+        }
+        return self.navigateViewControllers[index]!
+    }
     /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
