@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1512" y="-93"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="ozl-dr-Llr">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigation" id="OZt-MO-Amp" customClass="NavigationViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigation" id="OZt-MO-Amp" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNV-Qf-P1o">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="1512" y="827"/>
         </scene>
-        <!--ProfileViewController-->
+        <!--TimeLineViewController-->
         <scene sceneID="V1H-lf-vSo">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ProfileViewController" storyboardName="ProfileViewController" referencedIdentifier="ProfileViewController" id="lmo-MM-XMU" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="ProfileViewController" storyboardName="TimeLineViewController" id="lmo-MM-XMU" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="YP4-0o-QkY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bre-Mt-Fde" userLabel="First Responder" sceneMemberID="firstResponder"/>

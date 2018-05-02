@@ -44,7 +44,7 @@ class MenuTableViewController: UITableViewController {
         if (self.navigateViewControllers[viewId] == nil) {
             switch (viewId) {
             case 0:
-                self.navigateViewControllers[viewId] = TimeLineTableViewController.storyboardInstance()
+                self.navigateViewControllers[viewId] = TimeLineViewController.storyboardInstance()
             case 1:
                 self.navigateViewControllers[viewId] = ActivityViewController.storyboardInstance()
             case 2:
