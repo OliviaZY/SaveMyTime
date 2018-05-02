@@ -28,45 +28,36 @@ class MenuTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 3
-    }
-    
     var elDrawer : KYDrawerController? {
         return self.navigationController?.parent as? KYDrawerController
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController: UIViewController = self.getNavigateToViewController(indexPath.row)
+        let viewController: UIViewController = self.getNavigateToViewController(indexPath.section*10+indexPath.row)
         self.elDrawer?.mainViewController = UINavigationController(rootViewController: viewController)
         self.elDrawer?.setDrawerState(KYDrawerController.DrawerState.closed, animated: true)
     }
     
     var navigateViewControllers = [Int: UIViewController]()
     
-    func getNavigateToViewController(_ index: Int) -> UIViewController {
-        if (self.navigateViewControllers[index] == nil) {
-            switch (index) {
+    func getNavigateToViewController(_ viewId: Int) -> UIViewController {
+        if (self.navigateViewControllers[viewId] == nil) {
+            switch (viewId) {
             case 0:
-                self.navigateViewControllers[0] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TimeLineTableViewController")
-                self.navigateViewControllers[0]?.view.backgroundColor = UIColor.red
+                self.navigateViewControllers[viewId] = TimeLineTableViewController.storyboardInstance()
             case 1:
-                self.navigateViewControllers[1] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
-                self.navigateViewControllers[1]?.view.backgroundColor = UIColor.blue
+                self.navigateViewControllers[viewId] = ActivityViewController.storyboardInstance()
             case 2:
-                self.navigateViewControllers[2] = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
-                self.navigateViewControllers[2]?.view.backgroundColor = UIColor.yellow
+                self.navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
+            case 3:
+                self.navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
+            case 10:
+                self.navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
             default:
-                break
+                print("Cannot navigate to viewId of \(viewId)")
             }
         }
-        return self.navigateViewControllers[index]!
+        return self.navigateViewControllers[viewId]!
     }
     /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

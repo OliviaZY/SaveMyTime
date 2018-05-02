@@ -2,6 +2,11 @@ import UIKit
 
 class TimeLineTableViewController: UITableViewController {
 
+    static func storyboardInstance() -> TimeLineTableViewController? {
+        let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
+        return storyboard.instantiateInitialViewController() as? TimeLineTableViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "TimeLine"
