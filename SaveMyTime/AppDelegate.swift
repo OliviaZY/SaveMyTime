@@ -1,6 +1,6 @@
-
 import UIKit
 import KYDrawerController
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,7 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+// Override point for customization after application launch.
         
 //        let drawerController     = KYDrawerController(drawerDirection: KYDrawerController.DrawerDirection.left,
 //                                                      drawerWidth: CGFloat(10.0) )

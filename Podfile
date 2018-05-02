@@ -8,4 +8,7 @@ target 'SaveMyTime' do
   # Pods for SaveMyTime
 #  pod 'MSDynamicsDrawerViewController'
   pod 'KYDrawerController'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 end
