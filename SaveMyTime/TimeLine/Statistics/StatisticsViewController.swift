@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import PieCharts
 
 class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var timeSpanPicker: UIPickerView!
     
+    @IBOutlet weak var pieChart: PieChart!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.pieChart.models = [
+            PieSliceModel(value: 2.1, color: UIColor.yellow),
+            PieSliceModel(value: 3, color: UIColor.blue),
+            PieSliceModel(value: 1, color: UIColor.green)
+        ]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

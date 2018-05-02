@@ -212,6 +212,11 @@
                                     <outlet property="delegate" destination="bfQ-ZZ-TWE" id="3se-o0-KuC"/>
                                 </connections>
                             </pickerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-ZS-rfw" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="83" y="237" width="240" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -223,6 +228,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" id="cf1-K7-m5x"/>
                     <connections>
+                        <outlet property="pieChart" destination="7kp-ZS-rfw" id="0QL-dZ-tuJ"/>
                         <outlet property="timeSpanPicker" destination="UHT-fG-4v7" id="ESa-lK-GgW"/>
                     </connections>
                 </viewController>

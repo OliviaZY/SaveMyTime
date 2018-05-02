@@ -42,12 +42,14 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - PieCharts (0.0.6)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Storage
   - KYDrawerController
+  - PieCharts
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -61,6 +63,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - KYDrawerController
     - nanopb
+    - PieCharts
 
 SPEC CHECKSUMS:
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
@@ -73,7 +76,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  PieCharts: f4f866b3ed45dbeda355cc64664091024a9819ee
 
-PODFILE CHECKSUM: 428b179f08b47ca722e197892e7629d07782d249
+PODFILE CHECKSUM: dbdc420e908aa3204854055f2fd26294145ebe6e
 
 COCOAPODS: 1.5.0
