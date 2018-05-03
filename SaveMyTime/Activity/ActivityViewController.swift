@@ -20,7 +20,31 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func pressAddButton(_ sender: Any) {
-
+        let alertController = UIAlertController(title: "Add a new Activity",
+                                                message: "",
+                                                preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Name"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Category"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: UIAlertActionStyle.cancel,
+                                         handler: nil)
+        let createQuoteAction = UIAlertAction(title: "Create Weather Picture",
+                                              style: UIAlertActionStyle.default) {
+                                                (action) in
+                                                let activity = Activity(
+                                                    data: ["name":alertController.textFields![0].text!,
+                                                     "category":alertController.textFields![1].text!], id:nil)
+                                                self.firebaseActivityRef.addDocument(data: activity.data)
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(createQuoteAction)
+        present(alertController, animated: true, completion: nil)
+        
     }
     
     static func storyboardInstance() -> ActivityViewController? {
@@ -38,9 +62,9 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.activities = []
         self.firebaseActivityRef = Firestore.firestore().collection("user").document("test-uid").collection("activity")
         self.setUpListener()
-//        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
-//        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
-//        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+        //        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+        //        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+        //        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
     }
     
     func setUpListener() {
@@ -79,26 +103,26 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
             })
         })
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.activities!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let activityCell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath) as! ActivityCollectionViewCell
-        activityCell.labelView.text = "Test "
+        activityCell.labelView.text = self.activities[indexPath.row].name
         return activityCell
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

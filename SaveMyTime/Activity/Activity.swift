@@ -24,4 +24,11 @@ class Activity {
             self.created = Date()
         }
     }
+    
+    var data: [String: Any] {
+        return [
+            "name": self.name,
+            "category": self.category,
+            "created": self.created]
+    }
 }
