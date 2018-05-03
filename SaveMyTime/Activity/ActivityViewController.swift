@@ -8,7 +8,22 @@
 
 import UIKit
 
-class ActivityViewController: UITableViewController {
+class ActivityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell1", for: indexPath) as! UICollectionViewCell
+        
+        let thumbsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ThumbnailColllection") as! ThumbnailCollectionViewController
+        self.addChildViewController(thumbsViewController)
+        thumbsViewController.view.frame = cell.bounds
+        cell.addSubview(thumbsViewController.view)
+        thumbsViewController.didMoveToParentViewController(self)
+    }
+    
     
     static func storyboardInstance() -> ActivityViewController? {
         let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);

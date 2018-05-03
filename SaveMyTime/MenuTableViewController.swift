@@ -57,7 +57,7 @@ class MenuTableViewController: UITableViewController {
                 print("Cannot navigate to viewId of \(viewId)")
             }
         }
-        return self.navigateViewControllers[viewId]!
+        return (self.navigateViewControllers[viewId])!
     }
     /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
