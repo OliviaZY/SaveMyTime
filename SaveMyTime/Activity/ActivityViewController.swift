@@ -8,9 +8,16 @@
 
 import UIKit
 import SKFontAwesomeIconPickerView
+import Firebase
 
 class ActivityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var activities: [Activity]?
+    
+    var firebaseActivityRef: CollectionReference!
+    var listener: ListenerRegistration!
+    
+    var activities: [Activity]!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func pressAddButton(_ sender: Any) {
 
@@ -26,13 +33,53 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.title = "Edit Activities"
         self.setUpDrawer()
         
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
         self.activities = []
-
-        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
-        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
-        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+        self.firebaseActivityRef = Firestore.firestore().collection("user").document("test-uid").collection("activity")
+        self.setUpListener()
+//        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+//        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+//        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
     }
     
+    func setUpListener() {
+        self.activities?.removeAll()
+        self.listener?.remove()
+        self.listener = self.firebaseActivityRef.addSnapshotListener({ (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("Error fetching quotes.  error: \(error!.localizedDescription)")
+                return
+            }
+            snapshot.documentChanges.forEach({ (docChange) in
+                if (docChange.type == .added) {
+                    print("add \(docChange.document)")
+                    let activity = Activity(data: docChange.document.data(), id: docChange.document.documentID)
+                    self.activities.insert(activity, at: 0)
+                    self.collectionView.insertItems(at: [IndexPath(row:0, section:0)])
+                } else if (docChange.type == .modified) {
+                    print("modified \(docChange.document)")
+                    let modifiedActivity = Activity(data: docChange.document.data(), id: docChange.document.documentID)
+                    for i in 0..<self.activities.count {
+                        if (self.activities[i].id == modifiedActivity.id) {
+                            self.activities[i] = modifiedActivity
+                            self.collectionView.reloadItems(at: [IndexPath(row:i, section:0)])
+                            break
+                        }
+                    }
+                } else if (docChange.type == .removed) {
+                    for i in 0..<self.activities.count {
+                        if self.activities[i].id == docChange.document.documentID {
+                            self.activities.remove(at: i)
+                            self.collectionView.deleteItems(at: [IndexPath(row:i, section:0)])
+                            break
+                        }
+                    }
+                }
+            })
+        })
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.activities!.count
     }

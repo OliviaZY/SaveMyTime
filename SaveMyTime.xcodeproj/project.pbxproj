@@ -19,7 +19,7 @@
 		47E6165C20996AA7007E3118 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */; };
 		47F03F2B2091513F007C3316 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F03F2A2091513F007C3316 /* MenuTableViewController.swift */; };
 		5D91A2327E720D7C5A187938 /* Pods_SaveMyTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBACFD0A4936403907836B15 /* Pods_SaveMyTime.framework */; };
-		A077D541209AA83600B6C83A /* (null) in Resources */ = {isa = PBXBuildFile; };
+		A077D541209AA83600B6C83A /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		A08080A3209AA9440067A716 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08080A2209AA9440067A716 /* ProfileViewController.storyboard */; };
 		A08080A5209AA9D60067A716 /* TimeLineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */; };
 		A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */; };
@@ -268,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A077D541209AA83600B6C83A /* (null) in Resources */,
+				A077D541209AA83600B6C83A /* BuildFile in Resources */,
 				A08080A3209AA9440067A716 /* ProfileViewController.storyboard in Resources */,
 				A0B84C4D2071E17E009B34D6 /* LaunchScreen.storyboard in Resources */,
 				A0B84C672071ED97009B34D6 /* organize.jpeg in Resources */,
@@ -318,20 +318,34 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SKFontAwesomeIconPickerView/SKFontAwesomeIconPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PieCharts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKFontAwesomeIconPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

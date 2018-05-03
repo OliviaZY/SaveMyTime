@@ -79,7 +79,7 @@
                                 </constraints>
                                 <state key="normal" image="FB"/>
                                 <connections>
-                                    <action selector="pressAddButton:" destination="dzZ-jn-dGl" eventType="touchUpInside" id="2A4-zx-Vc8"/>
+                                    <action selector="pressAddButton:" destination="dzZ-jn-dGl" eventType="touchUpInside" id="ARp-ot-zo0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,7 +97,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="list" landscapeImage="list" largeContentSizeImage="list" id="c6a-m8-t9l" userLabel="List"/>
                     <connections>
-                        <outlet property="pressAddButton" destination="JZl-Mk-Aem" id="R4b-yN-3H6"/>
+                        <outlet property="collectionView" destination="o1Z-BM-6W1" id="73B-zt-VQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBy-Oj-Uq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
