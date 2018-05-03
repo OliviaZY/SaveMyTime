@@ -9,21 +9,7 @@
 import UIKit
 
 class ActivityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell1", for: indexPath) as! UICollectionViewCell
-        
-        let thumbsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ThumbnailColllection") as! ThumbnailCollectionViewController
-        self.addChildViewController(thumbsViewController)
-        thumbsViewController.view.frame = cell.bounds
-        cell.addSubview(thumbsViewController.view)
-        thumbsViewController.didMoveToParentViewController(self)
-    }
-    
+    var activities: [Activity]?
     
     static func storyboardInstance() -> ActivityViewController? {
         let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
@@ -35,12 +21,20 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.title = "Edit Activities"
         self.setUpDrawer()
         
-        // Do any additional setup after loading the view.
+        self.activities = []
+        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
+        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.activities!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let activityCell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath) as! ActivityCollectionViewCell
+        activityCell.labelView.text = "Test "
+        return activityCell
     }
     
 

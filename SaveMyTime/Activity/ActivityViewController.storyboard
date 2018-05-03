@@ -30,7 +30,7 @@
                                     <inset key="sectionInset" minX="2" minY="10" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell1" id="04f-bn-H3u">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="activityCell" id="04f-bn-H3u" customClass="ActivityCollectionViewCell" customModule="SaveMyTime" customModuleProvider="target">
                                         <rect key="frame" x="2" y="10" width="113" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -60,6 +60,10 @@
                                             <constraint firstItem="BR6-HV-Cgr" firstAttribute="top" secondItem="04f-bn-H3u" secondAttribute="top" id="kNc-EJ-Jnq"/>
                                             <constraint firstItem="2XD-Ok-fdU" firstAttribute="top" secondItem="BR6-HV-Cgr" secondAttribute="bottom" constant="9" id="vqv-4H-1X4"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="BR6-HV-Cgr" id="MJ8-el-hj3"/>
+                                            <outlet property="labelView" destination="2XD-Ok-fdU" id="fvN-mm-MdM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -73,7 +77,7 @@
                                     <constraint firstAttribute="width" secondItem="JZl-Mk-Aem" secondAttribute="height" multiplier="100:91" id="3bI-CX-hfo"/>
                                     <constraint firstAttribute="width" constant="100" id="ZdX-q8-NLr"/>
                                 </constraints>
-                                <state key="normal" image="icon"/>
+                                <state key="normal" image="FB"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.68548447769999998" green="0.71583897559999998" blue="0.91622814119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,7 +100,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="225" height="225"/>
+        <image name="FB" width="300" height="300"/>
         <image name="list" width="16" height="16"/>
     </resources>
 </document>
