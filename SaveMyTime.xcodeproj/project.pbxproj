@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		474D5E48209147A1001199E7 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D5E47209147A1001199E7 /* DrawerViewController.swift */; };
 		478259922091F96400221820 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478259912091F96400221820 /* ProfileViewController.swift */; };
-		47BC82EE209A210D00265A62 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BC82EC209A1F3400265A62 /* ProfileViewController.storyboard */; };
-		47BC82EF209A210D00265A62 /* TimeLineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BC82ED209A1FF100265A62 /* TimeLineViewController.storyboard */; };
 		47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */; };
 		47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */; };
 		47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165620995BEA007E3118 /* GoogleService-Info.plist */; };
@@ -18,6 +16,9 @@
 		47E6165C20996AA7007E3118 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */; };
 		47F03F2B2091513F007C3316 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F03F2A2091513F007C3316 /* MenuTableViewController.swift */; };
 		5D91A2327E720D7C5A187938 /* Pods_SaveMyTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBACFD0A4936403907836B15 /* Pods_SaveMyTime.framework */; };
+		A077D541209AA83600B6C83A /* (null) in Resources */ = {isa = PBXBuildFile; };
+		A08080A3209AA9440067A716 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08080A2209AA9440067A716 /* ProfileViewController.storyboard */; };
+		A08080A5209AA9D60067A716 /* TimeLineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */; };
 		A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */; };
 		A0B84C452071E17E009B34D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B84C432071E17E009B34D6 /* Main.storyboard */; };
 		A0B84C4A2071E17E009B34D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B84C492071E17E009B34D6 /* Assets.xcassets */; };
@@ -39,14 +40,14 @@
 		1CFD217EFF9B54E1801063B6 /* Pods-SaveMyTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.release.xcconfig"; sourceTree = "<group>"; };
 		474D5E47209147A1001199E7 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		478259912091F96400221820 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		47BC82EC209A1F3400265A62 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ProfileViewController.storyboard; path = /Users/FredZhang/Documents/IOS/SaveMyTime/SaveMyTime/Profile/ProfileViewController.storyboard; sourceTree = "<absolute>"; };
-		47BC82ED209A1FF100265A62 /* TimeLineViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = TimeLineViewController.storyboard; path = /Users/FredZhang/Documents/IOS/SaveMyTime/SaveMyTime/TimeLine/TimeLineViewController.storyboard; sourceTree = "<absolute>"; };
 		47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		47E6165620995BEA007E3118 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47E61659209966CF007E3118 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityViewController.storyboard; sourceTree = "<group>"; };
 		47F03F2A2091513F007C3316 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		A08080A2209AA9440067A716 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeLineViewController.storyboard; sourceTree = "<group>"; };
 		A0B84C3C2071E17D009B34D6 /* SaveMyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveMyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B84C442071E17E009B34D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,9 +84,9 @@
 		4782594F2091B37300221820 /* TimeLine */ = {
 			isa = PBXGroup;
 			children = (
+				A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */,
 				47BC82F1209A293800265A62 /* Statistics */,
 				47BC82F0209A292300265A62 /* TrackTime */,
-				47BC82ED209A1FF100265A62 /* TimeLineViewController.storyboard */,
 				47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */,
 			);
 			path = TimeLine;
@@ -94,7 +95,7 @@
 		478259902091F96400221820 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				47BC82EC209A1F3400265A62 /* ProfileViewController.storyboard */,
+				A08080A2209AA9440067A716 /* ProfileViewController.storyboard */,
 				478259912091F96400221820 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -258,10 +259,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47BC82EE209A210D00265A62 /* ProfileViewController.storyboard in Resources */,
-				47BC82EF209A210D00265A62 /* TimeLineViewController.storyboard in Resources */,
+				A077D541209AA83600B6C83A /* (null) in Resources */,
+				A08080A3209AA9440067A716 /* ProfileViewController.storyboard in Resources */,
 				A0B84C4D2071E17E009B34D6 /* LaunchScreen.storyboard in Resources */,
 				A0B84C672071ED97009B34D6 /* organize.jpeg in Resources */,
+				A08080A5209AA9D60067A716 /* TimeLineViewController.storyboard in Resources */,
 				A0B84C592071ED7B009B34D6 /* meal.png in Resources */,
 				A0B84C5C2071ED88009B34D6 /* entertainment.png in Resources */,
 				A0B84C4A2071E17E009B34D6 /* Assets.xcassets in Resources */,
