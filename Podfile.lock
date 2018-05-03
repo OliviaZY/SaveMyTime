@@ -43,6 +43,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - PieCharts (0.0.6)
+  - SKFontAwesomeIconPickerView (0.0.5)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - KYDrawerController
   - PieCharts
+  - SKFontAwesomeIconPickerView (from `https://github.com/sag333ar/SKFontAwesomeIconPickerView.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -65,6 +67,16 @@ SPEC REPOS:
     - nanopb
     - PieCharts
 
+EXTERNAL SOURCES:
+  SKFontAwesomeIconPickerView:
+    :branch: master
+    :git: https://github.com/sag333ar/SKFontAwesomeIconPickerView.git
+
+CHECKOUT OPTIONS:
+  SKFontAwesomeIconPickerView:
+    :commit: e3539a7d9f63e89530f874b048e0e8fa34a118c0
+    :git: https://github.com/sag333ar/SKFontAwesomeIconPickerView.git
+
 SPEC CHECKSUMS:
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
@@ -77,7 +89,8 @@ SPEC CHECKSUMS:
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PieCharts: f4f866b3ed45dbeda355cc64664091024a9819ee
+  SKFontAwesomeIconPickerView: 8b121a69515f95b7f0866fa3b0b1bab0579805ba
 
-PODFILE CHECKSUM: dbdc420e908aa3204854055f2fd26294145ebe6e
+PODFILE CHECKSUM: 7eff20e89db2ff95b2f965e2598eeec22e6b18e9
 
 COCOAPODS: 1.5.0

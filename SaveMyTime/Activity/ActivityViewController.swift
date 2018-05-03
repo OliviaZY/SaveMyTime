@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import SKFontAwesomeIconPickerView
 
 class ActivityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var activities: [Activity]?
+    
+    @IBAction func pressAddButton(_ sender: Any) {
+
+    }
     
     static func storyboardInstance() -> ActivityViewController? {
         let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
@@ -22,6 +27,7 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.setUpDrawer()
         
         self.activities = []
+
         self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
         self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
         self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))

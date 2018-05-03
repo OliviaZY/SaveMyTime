@@ -13,4 +13,6 @@ target 'SaveMyTime' do
   pod 'Firebase/Storage'
   
   pod 'PieCharts'
+  
+  pod 'SKFontAwesomeIconPickerView', :git => 'https://github.com/sag333ar/SKFontAwesomeIconPickerView.git', :branch => 'master'
 end

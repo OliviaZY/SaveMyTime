@@ -78,6 +78,9 @@
                                     <constraint firstAttribute="width" constant="100" id="ZdX-q8-NLr"/>
                                 </constraints>
                                 <state key="normal" image="FB"/>
+                                <connections>
+                                    <action selector="pressAddButton:" destination="dzZ-jn-dGl" eventType="touchUpInside" id="2A4-zx-Vc8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.68548447769999998" green="0.71583897559999998" blue="0.91622814119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,6 +96,9 @@
                         <viewLayoutGuide key="safeArea" id="1iy-LQ-8bD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="list" landscapeImage="list" largeContentSizeImage="list" id="c6a-m8-t9l" userLabel="List"/>
+                    <connections>
+                        <outlet property="pressAddButton" destination="JZl-Mk-Aem" id="R4b-yN-3H6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBy-Oj-Uq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

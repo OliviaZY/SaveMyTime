@@ -11,6 +11,7 @@
 		478259922091F96400221820 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478259912091F96400221820 /* ProfileViewController.swift */; };
 		478571AF209B3B1B00BF685B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478571AE209B3B1B00BF685B /* Activity.swift */; };
 		478571B1209B3C9E00BF685B /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478571B0209B3C9E00BF685B /* ActivityCollectionViewCell.swift */; };
+		47A0DA5F209B444A00CE8AC7 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 478571B2209B416B00BF685B /* fontawesome-webfont.ttf */; };
 		47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */; };
 		47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */; };
 		47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165620995BEA007E3118 /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 		478259912091F96400221820 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		478571AE209B3B1B00BF685B /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		478571B0209B3C9E00BF685B /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		478571B2209B416B00BF685B /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		47E6165620995BEA007E3118 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		A0B84C3E2071E17D009B34D6 /* SaveMyTime */ = {
 			isa = PBXGroup;
 			children = (
+				478571B2209B416B00BF685B /* fontawesome-webfont.ttf */,
 				47E6165620995BEA007E3118 /* GoogleService-Info.plist */,
 				47E61658209965D3007E3118 /* Activity */,
 				478259902091F96400221820 /* Profile */,
@@ -282,6 +285,7 @@
 				A0B84C662071ED97009B34D6 /* exercise.jpeg in Resources */,
 				A0B84C5D2071ED88009B34D6 /* shopping.png in Resources */,
 				A0B84C452071E17E009B34D6 /* Main.storyboard in Resources */,
+				47A0DA5F209B444A00CE8AC7 /* fontawesome-webfont.ttf in Resources */,
 				47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +322,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework",
+				"${BUILT_PRODUCTS_DIR}/SKFontAwesomeIconPickerView/SKFontAwesomeIconPickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -326,6 +331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PieCharts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKFontAwesomeIconPickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
