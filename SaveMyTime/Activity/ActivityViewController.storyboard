@@ -63,6 +63,7 @@
                                         <connections>
                                             <outlet property="iconImageView" destination="BR6-HV-Cgr" id="MJ8-el-hj3"/>
                                             <outlet property="labelView" destination="2XD-Ok-fdU" id="fvN-mm-MdM"/>
+                                            <segue destination="bjJ-AS-DlR" kind="show" identifier="activityDetail" id="zSr-ir-9bd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -72,10 +73,10 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZl-Mk-Aem">
-                                <rect key="frame" x="275" y="576" width="100" height="91"/>
+                                <rect key="frame" x="325" y="621.5" width="50" height="45.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JZl-Mk-Aem" secondAttribute="height" multiplier="100:91" id="3bI-CX-hfo"/>
-                                    <constraint firstAttribute="width" constant="100" id="ZdX-q8-NLr"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZdX-q8-NLr"/>
                                 </constraints>
                                 <state key="normal" image="FB"/>
                                 <connections>
@@ -103,6 +104,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBy-Oj-Uq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1976.8" y="689.5052473763119"/>
+        </scene>
+        <!--Activity Detail View Controller-->
+        <scene sceneID="O2G-lJ-eSU">
+            <objects>
+                <viewController id="bjJ-AS-DlR" customClass="ActivityDetailViewController" customModule="SaveMyTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zei-X7-bTg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awC-4C-Jgs">
+                                <rect key="frame" x="180" y="69" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEV-j4-JVy">
+                                <rect key="frame" x="40" y="72" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="drD-rp-fPf"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityNameTextField" destination="awC-4C-Jgs" id="unN-PC-g4B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swi-id-XHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2895" y="690"/>
         </scene>
     </scenes>
     <resources>

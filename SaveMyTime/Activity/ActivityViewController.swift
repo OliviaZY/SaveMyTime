@@ -57,8 +57,6 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.title = "Edit Activities"
         self.setUpDrawer()
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
         self.activities = []
         self.firebaseActivityRef = Firestore.firestore().collection("user").document("test-uid").collection("activity")
         self.setUpListener()
@@ -113,16 +111,18 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         activityCell.labelView.text = self.activities[indexPath.row].name
         return activityCell
     }
+
     
-    
-    /*
-     // MARK: - Navigation
-     
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        if segue.identifier == "activityDetail" {
+            if let indexPath = self.collectionView.indexPathsForSelectedItems?[0] {
+                if let detailVC = segue.destination as? ActivityDetailViewController {
+                    detailVC.activityDocumentRef = self.firebaseActivityRef.document(self.activities[indexPath.row].id!)
+                }
+            }
+        }
      }
-     */
-    
 }

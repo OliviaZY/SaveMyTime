@@ -10,9 +10,9 @@ import Foundation
 
 class Activity {
     var id: String?
-    let name: String
-    let category: String
-    let created: Date
+    var name: String
+    var category: String
+    var created: Date
     
     init(data: [String: Any], id: String?) {
         self.id = id
