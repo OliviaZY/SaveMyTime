@@ -57,6 +57,7 @@ class TimeLineTableViewController: UITableViewController {
                 
                 if let snapshot = snapshot {
                     self.records = [[Record]]()
+                    self.records.append([])
                     self.now = Date()
                     var day = self.now.get(.day)
                     for doc in snapshot.documents {
@@ -65,7 +66,7 @@ class TimeLineTableViewController: UITableViewController {
                             self.records.append([record])
                             day = record.end.get(.day)
                         } else {
-                            self.records[self.records.endIndex].append(record)
+                            self.records[self.records.count-1].append(record)
                         }
                     }
                     self.tableView.reloadData()
@@ -86,7 +87,7 @@ class TimeLineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         let row = self.records[indexPath.section]
-        let record = row[row.count-1+indexPath.row]
+        let record = row[row.count-1-indexPath.row]
         cell.CategoryNameLabel.text = record.category
         cell.numActionLabel.text = "\(record.numTracked) tracking actions"
         cell.TimeSpanLabel.text = "\(record.start!) to \(record.end!)"

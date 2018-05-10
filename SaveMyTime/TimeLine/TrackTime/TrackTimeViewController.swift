@@ -1,8 +1,8 @@
 //
-//  ActivityViewController.swift
+//  TrackTimeViewController.swift
 //  SaveMyTime
 //
-//  Created by Fred Zhang on 5/1/18.
+//  Created by Fred Zhang on 5/10/18.
 //  Copyright © 2018 Yuan zhou. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import SKFontAwesomeIconPickerView
 import Firebase
 
-class ActivityViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var firebaseActivityRef: CollectionReference!
     var listener: ListenerRegistration!
@@ -19,34 +19,6 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func pressAddButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Add a new Activity",
-                                                message: "",
-                                                preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Name"
-        }
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Category"
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: UIAlertActionStyle.cancel,
-                                         handler: nil)
-        let createQuoteAction = UIAlertAction(title: "Create Activity Type",
-                                              style: UIAlertActionStyle.default) {
-                                                (action) in
-                                                let activity = Activity(
-                                                    data: ["name":alertController.textFields![0].text!,
-                                                     "category":alertController.textFields![1].text!], id:nil)
-                                                self.firebaseActivityRef.addDocument(data: activity.data)
-        }
-        alertController.addAction(cancelAction)
-        alertController.addAction(createQuoteAction)
-        present(alertController, animated: true, completion: nil)
-        
-    }
-    
     static func storyboardInstance() -> ActivityViewController? {
         let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
         return storyboard.instantiateInitialViewController() as? ActivityViewController
@@ -54,8 +26,6 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Edit Activities"
-        self.setUpDrawer()
         
         self.activities = []
         self.firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
@@ -108,18 +78,40 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         activityCell.labelView.text = self.activities[indexPath.row].name
         return activityCell
     }
-
     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-        if segue.identifier == "activityDetail" {
-            if let indexPath = self.collectionView.indexPathsForSelectedItems?[0] {
-                if let detailVC = segue.destination as? ActivityDetailViewController {
-                    detailVC.activityDocumentRef = self.firebaseActivityRef.document(self.activities[indexPath.row].id!)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedActivity = self.activities[indexPath.row]
+        let firebaseRecordRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("timeLine")
+        firebaseRecordRef.order(by: "start", descending:true)
+            .limit(to: 1)
+            .getDocuments(completion: { (snapshot, error) in
+                if let snapshot = snapshot {
+                    var category = ""
+                    if !snapshot.documents.isEmpty {
+                        let doc = snapshot.documents[0]
+                        let record = Record(data: doc.data(), id: doc.documentID)
+                        category = record.category
+                        if category == selectedActivity.category {
+                            record.numTracked = record.numTracked+1
+                            record.end = Date()
+                            firebaseRecordRef.document(record.id).updateData(record.data)
+                        } else {
+                            record.category = selectedActivity.category
+                            record.start = record.end
+                            record.end = Date()
+                            record.numTracked = 1
+                            firebaseRecordRef.addDocument(data: record.data)
+                        }
+                    } else {
+                        firebaseRecordRef.addDocument(data:
+                            ["start": Date().addingTimeInterval(-100),
+                             "end": Date(),
+                             "numTracked": 1,
+                             "category": selectedActivity.category])
+                    }
+                    self.tabBarController?.selectedIndex = 0
                 }
-            }
-        }
-     }
+            })
+    }
 }
+

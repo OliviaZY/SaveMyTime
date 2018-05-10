@@ -26,5 +26,4 @@ class TimeLineTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
 }

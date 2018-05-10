@@ -14,6 +14,7 @@
 		47A0DA63209C98C600CE8AC7 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A0DA62209C98C600CE8AC7 /* ActivityDetailViewController.swift */; };
 		47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */; };
 		47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */; };
+		47CFF38820A41CFD00CEAC01 /* TrackTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFF38720A41CFD00CEAC01 /* TrackTimeViewController.swift */; };
 		47E5B29C20A3EB4F0051B1C3 /* MenuTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */; };
 		47E5B29E20A3F1CC0051B1C3 /* DrawerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B29D20A3F1CB0051B1C3 /* DrawerExtension.swift */; };
 		47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */; };
@@ -53,6 +54,7 @@
 		47A0DA62209C98C600CE8AC7 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		47CFF38720A41CFD00CEAC01 /* TrackTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeViewController.swift; sourceTree = "<group>"; };
 		47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuTableViewController.storyboard; sourceTree = "<group>"; };
 		47E5B29D20A3F1CB0051B1C3 /* DrawerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerExtension.swift; sourceTree = "<group>"; };
 		47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		47BC82F0209A292300265A62 /* TrackTime */ = {
 			isa = PBXGroup;
 			children = (
+				47CFF38720A41CFD00CEAC01 /* TrackTimeViewController.swift */,
 			);
 			path = TrackTime;
 			sourceTree = "<group>";
@@ -366,6 +369,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SKFontAwesomeIconPickerView/SKFontAwesomeIconPickerView.framework",
@@ -383,6 +388,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PieCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKFontAwesomeIconPickerView.framework",
@@ -412,6 +419,7 @@
 				47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */,
 				478259922091F96400221820 /* ProfileViewController.swift in Sources */,
 				47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */,
+				47CFF38820A41CFD00CEAC01 /* TrackTimeViewController.swift in Sources */,
 				47E5B2A520A40D0A0051B1C3 /* Record.swift in Sources */,
 				478571AF209B3B1B00BF685B /* Activity.swift in Sources */,
 				47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */,
