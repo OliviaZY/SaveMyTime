@@ -36,6 +36,10 @@ class Record {
         }
     }
     
+    var activityLength: TimeInterval {
+        return self.end!.timeIntervalSince(self.start!)
+    }
+    
     var data: [String: Any] {
         return [
             "category": self.category,

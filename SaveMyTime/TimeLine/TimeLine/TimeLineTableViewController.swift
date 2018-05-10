@@ -86,11 +86,11 @@ class TimeLineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         let row = self.records[indexPath.section]
-        let record = row[row.count-1-indexPath.row]
+        let record = row[indexPath.row]
         cell.CategoryNameLabel.text = record.category
-        cell.numActionLabel.text = "\(record.numTracked) tracking actions"
+        cell.numActionLabel.text = "\(record.numTracked!) tracking actions"
         cell.TimeSpanLabel.text = "\(record.start!) to \(record.end!)"
-        cell.timeLengthLabel.text = "\(record.end!.timeIntervalSince(record.start!))"
+        cell.timeLengthLabel.text = "\(record.activityLength)"
         return cell
     }
     
