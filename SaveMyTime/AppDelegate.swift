@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         
         self.drawerController = KYDrawerController(drawerDirection: KYDrawerController.DrawerDirection.left,
-                                                       drawerWidth: CGFloat(300.0) )
+                                                   drawerWidth: CGFloat(300.0) )
         self.drawerController?.mainViewController = UINavigationController()
         self.drawerController?.drawerViewController = UINavigationController(
             rootViewController : MenuTableViewController.storyboardInstance()!
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
             return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: [:])
     }
     
@@ -82,10 +82,11 @@ extension UIViewController {
     }
     
     @objc func didTapOpenButton(_ sender: UIBarButtonItem) {
-        self.drawerController.setDrawerState(.opened, animated: true)
-        print("open drawer")
+        if Auth.auth().currentUser != nil {
+            self.drawerController.setDrawerState(.opened, animated: true)
+        }
     }
-
+    
     var drawerController: KYDrawerController {
         return (UIApplication.shared.delegate as! AppDelegate).drawerController!
     }

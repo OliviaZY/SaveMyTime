@@ -41,11 +41,30 @@
                                     <constraint firstAttribute="width" constant="150" id="rxv-IM-D4k"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-dO-2OK">
+                                <rect key="frame" x="113" y="410" width="150" height="30"/>
+                                <state key="normal" title="Sign In anonymous"/>
+                                <connections>
+                                    <action selector="signInAnonymous:" destination="oJz-b2-Drx" eventType="touchUpInside" id="ABQ-Cn-3vW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6c-Xl-vpj">
+                                <rect key="frame" x="112" y="124" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3DX-5m-IdD" firstAttribute="top" secondItem="lFl-dO-2OK" secondAttribute="bottom" constant="32" id="0FU-e9-Ixz"/>
+                            <constraint firstItem="U6c-Xl-vpj" firstAttribute="width" secondItem="lFl-dO-2OK" secondAttribute="width" id="AnK-kY-lHb"/>
+                            <constraint firstItem="U6c-Xl-vpj" firstAttribute="centerX" secondItem="hBk-er-ad1" secondAttribute="centerX" id="ESF-XS-DMa"/>
                             <constraint firstItem="hBk-er-ad1" firstAttribute="bottom" secondItem="3DX-5m-IdD" secondAttribute="bottom" constant="165" id="FWk-Jy-MPh"/>
                             <constraint firstItem="3DX-5m-IdD" firstAttribute="centerX" secondItem="hBk-er-ad1" secondAttribute="centerX" id="byB-gz-SN9"/>
+                            <constraint firstItem="lFl-dO-2OK" firstAttribute="width" secondItem="3DX-5m-IdD" secondAttribute="width" id="ddG-YQ-EMB"/>
+                            <constraint firstItem="U6c-Xl-vpj" firstAttribute="top" secondItem="hBk-er-ad1" secondAttribute="top" constant="104" id="e4Y-lk-bsr"/>
+                            <constraint firstItem="lFl-dO-2OK" firstAttribute="centerX" secondItem="hBk-er-ad1" secondAttribute="centerX" id="r5Y-AI-ynF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hBk-er-ad1"/>
                     </view>
@@ -58,11 +77,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="googleLoginButton" destination="4Fd-di-xv2" id="ciP-AA-hqU"/>
+                        <outlet property="label" destination="U6c-Xl-vpj" id="bGn-s6-ywc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPk-Im-cgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1239" y="-740"/>
+            <point key="canvasLocation" x="-1239.2" y="-740.7796101949026"/>
         </scene>
     </scenes>
 </document>
