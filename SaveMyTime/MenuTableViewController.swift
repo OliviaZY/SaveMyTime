@@ -11,14 +11,22 @@ import KYDrawerController
 
 class MenuTableViewController: UITableViewController {
     
+    static func storyboardInstance() -> MenuTableViewController? {
+        let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
+        return storyboard.instantiateInitialViewController() as? MenuTableViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Do any additional setup after loading the view.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                                 target: self,
+                                                                 action: #selector(didTapCloseButton))
+    }
+    
+    @objc func didTapCloseButton(_ sender: UIButton) {
+        self.drawerController.setDrawerState(.closed, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,14 +36,10 @@ class MenuTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    var elDrawer : KYDrawerController? {
-        return self.navigationController?.parent as? KYDrawerController
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController: UIViewController = self.getNavigateToViewController(indexPath.section*10+indexPath.row)
-        self.elDrawer?.mainViewController = UINavigationController(rootViewController: viewController)
-        self.elDrawer?.setDrawerState(KYDrawerController.DrawerState.closed, animated: true)
+        self.drawerController.mainViewController = UINavigationController(rootViewController: viewController)
+        self.drawerController.setDrawerState(KYDrawerController.DrawerState.closed, animated: true)
     }
     
     var navigateViewControllers = [Int: UIViewController]()
@@ -114,23 +118,4 @@ class MenuTableViewController: UITableViewController {
      }
      */
     
-}
-
-extension UIViewController {
-    
-    func setUpDrawer() {
-        // Do any additional setup after loading the view.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Open",
-            style: UIBarButtonItemStyle.plain,
-            target: self,
-            action: #selector(didTapOpenButton)
-        )
-    }
-    
-    @objc func didTapOpenButton(_ sender: UIBarButtonItem) {
-        if let drawerController = navigationController?.parent as? KYDrawerController {
-            drawerController.setDrawerState(.opened, animated: true)
-        }
-    }
 }

@@ -40,6 +40,11 @@ PODS:
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleSignIn (4.1.2):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
@@ -69,7 +74,13 @@ PODS:
   - gRPC/Main (1.11.0):
     - gRPC-Core (= 1.11.0)
     - gRPC-RxLibrary (= 1.11.0)
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.15):
+    - GTMSessionFetcher/Full (= 1.1.15)
   - GTMSessionFetcher/Core (1.1.15)
+  - GTMSessionFetcher/Full (1.1.15):
+    - GTMSessionFetcher/Core (= 1.1.15)
   - KYDrawerController (2.0.4)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -86,6 +97,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
+  - GoogleSignIn
   - KYDrawerController
   - PieCharts
   - SKFontAwesomeIconPickerView (from `https://github.com/sag333ar/SKFontAwesomeIconPickerView.git`, branch `master`)
@@ -100,11 +112,13 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseStorage
+    - GoogleSignIn
     - GoogleToolboxForMac
     - gRPC
     - gRPC-Core
     - gRPC-ProtoRPC
     - gRPC-RxLibrary
+    - GTMOAuth2
     - GTMSessionFetcher
     - KYDrawerController
     - leveldb-library
@@ -131,11 +145,13 @@ SPEC CHECKSUMS:
   FirebaseFirestore: e92a096ce80c7b4b905d4e9d41dbd944adc9d2a5
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   gRPC: 70703dc9ba31c72341fc7f37745cc1c379edee96
   gRPC-Core: 164639cd8ae18ca8b65477fafb2efbaecf4f181a
   gRPC-ProtoRPC: bb5fddf3424aa4fad74d76736578a79fe40e244e
   gRPC-RxLibrary: 26d53d1b1f306befd4ad4e15bd6de27839a82481
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -144,6 +160,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SKFontAwesomeIconPickerView: 8b121a69515f95b7f0866fa3b0b1bab0579805ba
 
-PODFILE CHECKSUM: 0e66c95dca15266409f043cd5cce20ff0f7c95b9
+PODFILE CHECKSUM: 8a213ae9adfec69d193e396cd0b26fdf7c2e258a
 
 COCOAPODS: 1.5.0

@@ -33,8 +33,20 @@
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                 <state key="normal" title=""/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DX-5m-IdD" customClass="GIDSignInButton">
+                                <rect key="frame" x="112" y="472" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JoC-fH-DbQ"/>
+                                    <constraint firstAttribute="width" constant="150" id="rxv-IM-D4k"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hBk-er-ad1" firstAttribute="bottom" secondItem="3DX-5m-IdD" secondAttribute="bottom" constant="165" id="FWk-Jy-MPh"/>
+                            <constraint firstItem="3DX-5m-IdD" firstAttribute="centerX" secondItem="hBk-er-ad1" secondAttribute="centerX" id="byB-gz-SN9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hBk-er-ad1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="lL8-u0-VlL">
@@ -47,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPk-Im-cgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="826.23688155922048"/>
+            <point key="canvasLocation" x="-1239" y="-740"/>
         </scene>
     </scenes>
 </document>

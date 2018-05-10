@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		474D5E48209147A1001199E7 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D5E47209147A1001199E7 /* DrawerViewController.swift */; };
 		478259922091F96400221820 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478259912091F96400221820 /* ProfileViewController.swift */; };
 		478571AF209B3B1B00BF685B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478571AE209B3B1B00BF685B /* Activity.swift */; };
 		478571B1209B3C9E00BF685B /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478571B0209B3C9E00BF685B /* ActivityCollectionViewCell.swift */; };
@@ -15,6 +14,7 @@
 		47A0DA63209C98C600CE8AC7 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A0DA62209C98C600CE8AC7 /* ActivityDetailViewController.swift */; };
 		47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */; };
 		47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */; };
+		47E5B29C20A3EB4F0051B1C3 /* MenuTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */; };
 		47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165620995BEA007E3118 /* GoogleService-Info.plist */; };
 		47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E61659209966CF007E3118 /* ActivityViewController.swift */; };
 		47E6165C20996AA7007E3118 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */; };
@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		102878820469CF5D3C953781 /* Pods-SaveMyTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.debug.xcconfig"; sourceTree = "<group>"; };
 		1CFD217EFF9B54E1801063B6 /* Pods-SaveMyTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveMyTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime.release.xcconfig"; sourceTree = "<group>"; };
-		474D5E47209147A1001199E7 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		478259912091F96400221820 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		478571AE209B3B1B00BF685B /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		478571B0209B3C9E00BF685B /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		47A0DA62209C98C600CE8AC7 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuTableViewController.storyboard; sourceTree = "<group>"; };
 		47E6165620995BEA007E3118 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47E61659209966CF007E3118 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityViewController.storyboard; sourceTree = "<group>"; };
@@ -171,11 +171,11 @@
 				478259902091F96400221820 /* Profile */,
 				4782594F2091B37300221820 /* TimeLine */,
 				47F03F2A2091513F007C3316 /* MenuTableViewController.swift */,
-				474D5E47209147A1001199E7 /* DrawerViewController.swift */,
+				47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */,
+				A0B84C432071E17E009B34D6 /* Main.storyboard */,
 				A0B84C552071EB70009B34D6 /* supportingImages */,
 				A0B84C542071E977009B34D6 /* fa-regular-400.ttf */,
 				A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */,
-				A0B84C432071E17E009B34D6 /* Main.storyboard */,
 				A0B84C492071E17E009B34D6 /* Assets.xcassets */,
 				A0B84C4B2071E17E009B34D6 /* LaunchScreen.storyboard */,
 				A0B84C4E2071E17E009B34D6 /* Info.plist */,
@@ -222,6 +222,7 @@
 				A0B84C392071E17D009B34D6 /* Frameworks */,
 				A0B84C3A2071E17D009B34D6 /* Resources */,
 				B7C5344B63B695E49C0A7E17 /* [CP] Embed Pods Frameworks */,
+				B622730E2B1721A848843589 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +289,7 @@
 				A0B84C662071ED97009B34D6 /* exercise.jpeg in Resources */,
 				A0B84C5D2071ED88009B34D6 /* shopping.png in Resources */,
 				A0B84C452071E17E009B34D6 /* Main.storyboard in Resources */,
+				47E5B29C20A3EB4F0051B1C3 /* MenuTableViewController.storyboard in Resources */,
 				47A0DA5F209B444A00CE8AC7 /* fontawesome-webfont.ttf in Resources */,
 				47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */,
 			);
@@ -314,6 +316,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B622730E2B1721A848843589 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B7C5344B63B695E49C0A7E17 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +342,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SaveMyTime/Pods-SaveMyTime-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
@@ -338,6 +359,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
@@ -369,7 +391,6 @@
 				47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */,
 				478259922091F96400221820 /* ProfileViewController.swift in Sources */,
 				47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */,
-				474D5E48209147A1001199E7 /* DrawerViewController.swift in Sources */,
 				478571AF209B3B1B00BF685B /* Activity.swift in Sources */,
 				47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */,
 				478571B1209B3C9E00BF685B /* ActivityCollectionViewCell.swift in Sources */,
