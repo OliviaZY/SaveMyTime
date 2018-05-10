@@ -7,22 +7,91 @@
 //
 
 import UIKit
+import Firebase
 import PieCharts
 
 class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var timeSpanPicker: UIPickerView!
-    
     @IBOutlet weak var pieChart: PieChart!
+    
+    var firebaseActivityRef: CollectionReference!
+    var firebaseRecordRef: CollectionReference!
+    var listener: ListenerRegistration!
+    var percentage = [String: Double]()
+    var activities = [String: Activity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.pieChart.models = [
-            PieSliceModel(value: 2.1, color: UIColor.yellow),
-            PieSliceModel(value: 3, color: UIColor.blue),
-            PieSliceModel(value: 1, color: UIColor.green)
-        ]
+        self.firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
+        self.firebaseActivityRef.getDocuments {(querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("Error fetching quotes.  error: \(error!.localizedDescription)")
+                return
+            }
+            self.activities = [String: Activity]()
+            for doc in snapshot.documents {
+                let activity = Activity(data: doc.data(), id:doc.documentID)
+                self.activities[activity.category] = activity
+            }
+        }
+        
+        self.firebaseRecordRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("timeLine")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setUpListener()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.listener?.remove()
+    }
+    
+    func setUpListener() {
+        self.listener?.remove()
+        self.listener = self.firebaseRecordRef
+            .order(by: "start", descending:true)
+            .limit(to: 50)
+            .addSnapshotListener({ (snapshot, error) in
+                if let error = error {
+                    print("\(error.localizedDescription)")
+                    return
+                }
+                
+                if let snapshot = snapshot {
+                    self.percentage = [String: Double]()
+                    for doc in snapshot.documents {
+                        let record = Record(data: doc.data(), id:doc.documentID)
+                        self.percentage[record.category] = self.percentage[record.category] ?? 0 + record.activityLength
+                    }
+                    var models = [PieSliceModel]()
+                    for (category, time) in self.percentage {
+                        if let activity = self.activities[category] {
+                            models.append(PieSliceModel(value: time, color: activity.color, obj: self.activities[category]))
+                        }
+                    }
+                    self.pieChart.models = models
+                    
+                    
+                    let textLayerSettings = PiePlainTextLayerSettings()
+                    textLayerSettings.viewRadius = 80
+                    textLayerSettings.label.font = UIFont.systemFont(ofSize: 8)
+                    let formatter = NumberFormatter()
+                    formatter.maximumFractionDigits = 1
+                    textLayerSettings.label.textGenerator = {slice in
+                        let percentageStr = formatter.string(from: slice.data.percentage * 100 as NSNumber).map{"\($0)%"} ?? ""
+                        let activity = slice.data.model.obj as! Activity
+                        let text =  "\(activity.category) \(percentageStr)"
+                        print(text)
+                        return text
+                    }
+                    
+                    let textLayer = PiePlainTextLayer()
+                    textLayer.settings = textLayerSettings
+                    self.pieChart.layers = [textLayer]
+                }
+            })
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -56,16 +125,4 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("Selected \(row)")
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
