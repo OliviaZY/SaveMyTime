@@ -58,11 +58,8 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.setUpDrawer()
         
         self.activities = []
-        self.firebaseActivityRef = Firestore.firestore().collection("user").document("test-uid").collection("activity")
+        self.firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
         self.setUpListener()
-        //        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
-        //        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
-        //        self.activities?.append(Activity(data: ["name": "Work", "category": "Work"], id: nil))
     }
     
     func setUpListener() {

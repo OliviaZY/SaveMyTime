@@ -18,6 +18,7 @@
 		47E5B29E20A3F1CC0051B1C3 /* DrawerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B29D20A3F1CB0051B1C3 /* DrawerExtension.swift */; };
 		47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */; };
 		47E5B2A220A40C3C0051B1C3 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B2A120A40C3C0051B1C3 /* TimeLineTableViewController.swift */; };
+		47E5B2A520A40D0A0051B1C3 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B2A420A40D0A0051B1C3 /* Record.swift */; };
 		47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165620995BEA007E3118 /* GoogleService-Info.plist */; };
 		47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E61659209966CF007E3118 /* ActivityViewController.swift */; };
 		47E6165C20996AA7007E3118 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */; };
@@ -56,6 +57,7 @@
 		47E5B29D20A3F1CB0051B1C3 /* DrawerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerExtension.swift; sourceTree = "<group>"; };
 		47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
 		47E5B2A120A40C3C0051B1C3 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
+		47E5B2A420A40D0A0051B1C3 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		47E6165620995BEA007E3118 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47E61659209966CF007E3118 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityViewController.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */,
 				47BC82F1209A293800265A62 /* Statistics */,
 				47BC82F0209A292300265A62 /* TrackTime */,
+				47E5B2A420A40D0A0051B1C3 /* Record.swift */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */,
 				478259922091F96400221820 /* ProfileViewController.swift in Sources */,
 				47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */,
+				47E5B2A520A40D0A0051B1C3 /* Record.swift in Sources */,
 				478571AF209B3B1B00BF685B /* Activity.swift in Sources */,
 				47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */,
 				47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */,
