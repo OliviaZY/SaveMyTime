@@ -15,6 +15,6 @@ target 'SaveMyTime' do
   pod 'GoogleSignIn'
   
   pod 'PieCharts'
-  pod 'Material'
+  pod 'MaterialComponents/Cards'
   pod 'SKFontAwesomeIconPickerView', :git => 'https://github.com/sag333ar/SKFontAwesomeIconPickerView.git', :branch => 'master'
 end

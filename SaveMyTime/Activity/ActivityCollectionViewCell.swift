@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialCards
 
-class ActivityCollectionViewCell: UICollectionViewCell {
+class ActivityCollectionViewCell: MDCCardCollectionCell {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var labelView: UILabel!
+    
+    func display(_ activity: Activity) {
+        self.labelView.text = activity.name
+//        self.iconImageView.text =
+        self.backgroundColor = activity.color
+    }
 }

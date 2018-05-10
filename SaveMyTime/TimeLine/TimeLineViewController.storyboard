@@ -189,16 +189,18 @@
                                     <outlet property="delegate" destination="bfQ-ZZ-TWE" id="3se-o0-KuC"/>
                                 </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-ZS-rfw" customClass="PieChart" customModule="PieCharts">
-                                <rect key="frame" x="83" y="237" width="240" height="251"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-ZS-rfw" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="67" y="152" width="240" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7kp-ZS-rfw" firstAttribute="leading" secondItem="ep1-4p-pzl" secondAttribute="leading" constant="67" id="7Oy-XR-HSE"/>
                             <constraint firstItem="UHT-fG-4v7" firstAttribute="top" secondItem="ep1-4p-pzl" secondAttribute="top" constant="5" id="Dcz-fo-EBC"/>
                             <constraint firstItem="UHT-fG-4v7" firstAttribute="leading" secondItem="ep1-4p-pzl" secondAttribute="leading" id="Eo7-zj-gEU"/>
                             <constraint firstItem="7kp-ZS-rfw" firstAttribute="centerY" secondItem="ep1-4p-pzl" secondAttribute="centerY" id="VrJ-RJ-c2R"/>
+                            <constraint firstItem="ep1-4p-pzl" firstAttribute="bottom" secondItem="7kp-ZS-rfw" secondAttribute="bottom" constant="132" id="eAb-kd-igd"/>
                             <constraint firstItem="UHT-fG-4v7" firstAttribute="trailing" secondItem="ep1-4p-pzl" secondAttribute="trailing" id="fjV-1F-ejd"/>
                             <constraint firstItem="7kp-ZS-rfw" firstAttribute="centerX" secondItem="ep1-4p-pzl" secondAttribute="centerX" id="iNT-hC-6i2"/>
                         </constraints>

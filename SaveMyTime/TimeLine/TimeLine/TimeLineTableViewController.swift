@@ -57,9 +57,8 @@ class TimeLineTableViewController: UITableViewController {
                 
                 if let snapshot = snapshot {
                     self.records = [[Record]]()
-                    self.records.append([])
                     self.now = Date()
-                    var day = self.now.get(.day)
+                    var day = -1
                     for doc in snapshot.documents {
                         let record = Record(data: doc.data(), id:doc.documentID)
                         if record.end.get(.day) != day {

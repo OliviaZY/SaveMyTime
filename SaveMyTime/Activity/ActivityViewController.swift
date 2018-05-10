@@ -29,7 +29,9 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         alertController.addTextField { (textField) in
             textField.placeholder = "Category"
         }
-        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "ColorName"
+        }
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: UIAlertActionStyle.cancel,
                                          handler: nil)
@@ -38,7 +40,8 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
                                                 (action) in
                                                 let activity = Activity(
                                                     data: ["name":alertController.textFields![0].text!,
-                                                     "category":alertController.textFields![1].text!], id:nil)
+                                                     "category":alertController.textFields![1].text!,
+                                                     "colorName":alertController.textFields![2].text!], id:nil)
                                                 self.firebaseActivityRef.addDocument(data: activity.data)
         }
         alertController.addAction(cancelAction)
@@ -105,7 +108,7 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let activityCell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath) as! ActivityCollectionViewCell
-        activityCell.labelView.text = self.activities[indexPath.row].name
+        activityCell.display(self.activities[indexPath.row])
         return activityCell
     }
 

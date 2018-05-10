@@ -19,11 +19,6 @@ class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    static func storyboardInstance() -> ActivityViewController? {
-        let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
-        return storyboard.instantiateInitialViewController() as? ActivityViewController
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,39 +28,18 @@ class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func setUpListener() {
-        self.activities?.removeAll()
         self.listener?.remove()
         self.listener = self.firebaseActivityRef.addSnapshotListener({ (querySnapshot, error) in
             guard let snapshot = querySnapshot else {
                 print("Error fetching quotes.  error: \(error!.localizedDescription)")
                 return
             }
-            snapshot.documentChanges.forEach({ (docChange) in
-                if (docChange.type == .added) {
-                    print("add \(docChange.document)")
-                    let activity = Activity(data: docChange.document.data(), id: docChange.document.documentID)
-                    self.activities.insert(activity, at: 0)
-                    self.collectionView.insertItems(at: [IndexPath(row:0, section:0)])
-                } else if (docChange.type == .modified) {
-                    print("modified \(docChange.document)")
-                    let modifiedActivity = Activity(data: docChange.document.data(), id: docChange.document.documentID)
-                    for i in 0..<self.activities.count {
-                        if (self.activities[i].id == modifiedActivity.id) {
-                            self.activities[i] = modifiedActivity
-                            self.collectionView.reloadItems(at: [IndexPath(row:i, section:0)])
-                            break
-                        }
-                    }
-                } else if (docChange.type == .removed) {
-                    for i in 0..<self.activities.count {
-                        if self.activities[i].id == docChange.document.documentID {
-                            self.activities.remove(at: i)
-                            self.collectionView.deleteItems(at: [IndexPath(row:i, section:0)])
-                            break
-                        }
-                    }
-                }
-            })
+            self.activities = [Activity]()
+            for doc in snapshot.documents {
+                let activity = Activity(data: doc.data(), id:doc.documentID)
+                self.activities.append(activity)
+                self.collectionView.reloadData()
+            }
         })
     }
     
@@ -75,7 +49,7 @@ class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let activityCell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath) as! ActivityCollectionViewCell
-        activityCell.labelView.text = self.activities[indexPath.row].name
+        activityCell.display(self.activities[indexPath.row])
         return activityCell
     }
     
