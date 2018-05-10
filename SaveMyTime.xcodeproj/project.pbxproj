@@ -16,6 +16,8 @@
 		47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */; };
 		47E5B29C20A3EB4F0051B1C3 /* MenuTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */; };
 		47E5B29E20A3F1CC0051B1C3 /* DrawerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B29D20A3F1CB0051B1C3 /* DrawerExtension.swift */; };
+		47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */; };
+		47E5B2A220A40C3C0051B1C3 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5B2A120A40C3C0051B1C3 /* TimeLineTableViewController.swift */; };
 		47E6165720995BEA007E3118 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165620995BEA007E3118 /* GoogleService-Info.plist */; };
 		47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E61659209966CF007E3118 /* ActivityViewController.swift */; };
 		47E6165C20996AA7007E3118 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */; };
@@ -52,6 +54,8 @@
 		47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		47E5B29B20A3EB4F0051B1C3 /* MenuTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuTableViewController.storyboard; sourceTree = "<group>"; };
 		47E5B29D20A3F1CB0051B1C3 /* DrawerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerExtension.swift; sourceTree = "<group>"; };
+		47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
+		47E5B2A120A40C3C0051B1C3 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		47E6165620995BEA007E3118 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47E61659209966CF007E3118 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		47E6165B20996AA7007E3118 /* ActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityViewController.storyboard; sourceTree = "<group>"; };
@@ -94,10 +98,11 @@
 		4782594F2091B37300221820 /* TimeLine */ = {
 			isa = PBXGroup;
 			children = (
+				47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */,
+				47E5B2A320A40C440051B1C3 /* TimeLine */,
 				A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */,
 				47BC82F1209A293800265A62 /* Statistics */,
 				47BC82F0209A292300265A62 /* TrackTime */,
-				47BC82F6209A2C0200265A62 /* TimeLineViewController.swift */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -124,6 +129,15 @@
 				47BC82F2209A2AC400265A62 /* StatisticsViewController.swift */,
 			);
 			path = Statistics;
+			sourceTree = "<group>";
+		};
+		47E5B2A320A40C440051B1C3 /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				47E5B29F20A40AE90051B1C3 /* TimeLineTableViewCell.swift */,
+				47E5B2A120A40C3C0051B1C3 /* TimeLineTableViewController.swift */,
+			);
+			path = TimeLine;
 			sourceTree = "<group>";
 		};
 		47E61658209965D3007E3118 /* Activity */ = {
@@ -390,11 +404,13 @@
 			files = (
 				47A0DA63209C98C600CE8AC7 /* ActivityDetailViewController.swift in Sources */,
 				47F03F2B2091513F007C3316 /* MenuTableViewController.swift in Sources */,
+				47E5B2A220A40C3C0051B1C3 /* TimeLineTableViewController.swift in Sources */,
 				A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */,
 				47BC82F3209A2AC400265A62 /* StatisticsViewController.swift in Sources */,
 				478259922091F96400221820 /* ProfileViewController.swift in Sources */,
 				47E6165A209966CF007E3118 /* ActivityViewController.swift in Sources */,
 				478571AF209B3B1B00BF685B /* Activity.swift in Sources */,
+				47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */,
 				47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */,
 				47E5B29E20A3F1CC0051B1C3 /* DrawerExtension.swift in Sources */,
 				478571B1209B3C9E00BF685B /* ActivityCollectionViewCell.swift in Sources */,
