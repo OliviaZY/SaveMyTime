@@ -56,6 +56,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="googleLoginButton" destination="4Fd-di-xv2" id="ciP-AA-hqU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPk-Im-cgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -37,32 +37,10 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController: UIViewController = self.getNavigateToViewController(indexPath.section*10+indexPath.row)
-        self.drawerController.mainViewController = UINavigationController(rootViewController: viewController)
+        self.drawerController.navigateTo(indexPath.section*10+indexPath.row)
         self.drawerController.setDrawerState(KYDrawerController.DrawerState.closed, animated: true)
     }
     
-    var navigateViewControllers = [Int: UIViewController]()
-    
-    func getNavigateToViewController(_ viewId: Int) -> UIViewController {
-        if (self.navigateViewControllers[viewId] == nil) {
-            switch (viewId) {
-            case 0:
-                self.navigateViewControllers[viewId] = TimeLineViewController.storyboardInstance()
-            case 1:
-                self.navigateViewControllers[viewId] = ActivityViewController.storyboardInstance()
-            case 2:
-                self.navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
-            case 3:
-                self.navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
-            case 10:
-                self.navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
-            default:
-                print("Cannot navigate to viewId of \(viewId)")
-            }
-        }
-        return (self.navigateViewControllers[viewId])!
-    }
     /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

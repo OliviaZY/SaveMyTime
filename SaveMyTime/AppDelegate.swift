@@ -14,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         self.drawerController = KYDrawerController(drawerDirection: KYDrawerController.DrawerDirection.left,
                                                        drawerWidth: CGFloat(300.0) )
-        self.drawerController?.mainViewController = UINavigationController(
-            rootViewController : ProfileViewController.storyboardInstance()!
-        )
+        self.drawerController?.mainViewController = UINavigationController()
         self.drawerController?.drawerViewController = UINavigationController(
             rootViewController : MenuTableViewController.storyboardInstance()!
         )
@@ -25,19 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         window?.rootViewController = drawerController
         window?.makeKeyAndVisible()
         
-        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-//        self.showLoginViewController()
-//        Auth.auth().addStateDidChangeListener { (auth, user) in
-//            if user == nil {
-//                self.showLoginViewController()
-//            } else {
-//                self.showWeatherPicController()
-//            }
-//            print("User changed \(user)")
-//        }
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user == nil {
+                self.drawerController?.navigateTo(ViewId.Profile)
+            } else {
+                self.drawerController?.navigateTo(ViewId.TimeLine)
+            }
+            print("User changed \(user)")
+        }
         return true
     }
     
@@ -75,7 +71,6 @@ func getloggedInUid() -> String {
 }
 
 extension UIViewController {
-    
     func setUpDrawer() {
         // Do any additional setup after loading the view.
         navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -86,17 +81,12 @@ extension UIViewController {
         )
     }
     
-    var appDelegate : AppDelegate {
-        get {
-            return UIApplication.shared.delegate as! AppDelegate
-        }
-    }
-    
-    var drawerController: KYDrawerController {
-        return self.appDelegate.drawerController!
-    }
-    
     @objc func didTapOpenButton(_ sender: UIBarButtonItem) {
         self.drawerController.setDrawerState(.opened, animated: true)
+        print("open drawer")
+    }
+
+    var drawerController: KYDrawerController {
+        return (UIApplication.shared.delegate as! AppDelegate).drawerController!
     }
 }
