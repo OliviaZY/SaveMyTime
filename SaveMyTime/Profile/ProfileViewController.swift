@@ -17,7 +17,6 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil
         
-        GIDSignIn.sharedInstance().uiDelegate.self = self
         
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.,
 //                                                                 target: self,
@@ -41,6 +40,8 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
     
     func updateView(user: User?) {
         if user == nil {
+            
+            GIDSignIn.sharedInstance().uiDelegate.self = self
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "",
                                                                      style: .plain,
                                                                      target: self,
