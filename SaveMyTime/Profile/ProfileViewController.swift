@@ -15,8 +15,7 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Profile"
-        self.setUpDrawer()
+        navigationItem.leftBarButtonItem = nil
         
         GIDSignIn.sharedInstance().uiDelegate.self = self
         
@@ -28,19 +27,26 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
 //                                                 handler: { (action) in
 //                                                    self.appDelegate.handleLogout()
 //        }))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(self.logout))
+        
+        
         self.updateLabel()
     }
     
     func updateLabel() {
-        if let user = Auth.auth().currentUser {
-            self.label.text = "Signed in as \(String(describing: user.uid))"
-        } else {
-            self.label.text = "Please sign in first"
-            self.label.font.withSize(36);
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user == nil {
+//                print("User changed \(String(describing: user))")
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out",
+                                                                    style: .plain,
+                                                                    target: self,
+                                                                    action: #selector(self.logout))
+                self.title = "Profile"
+                self.label.text = "Signed in as \(String(describing: user?.uid))"
+            } else {
+                self.title = ""
+                self.label.text = "Please sign in first"
+                self.label.font.withSize(36);
+            }
         }
     }
     
