@@ -34,19 +34,32 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
     
     func updateLabel() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user == nil {
-//                print("User changed \(String(describing: user))")
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out",
-                                                                    style: .plain,
-                                                                    target: self,
-                                                                    action: #selector(self.logout))
-                self.title = "Profile"
-                self.label.text = "Signed in as \(String(describing: user?.uid))"
-            } else {
-                self.title = ""
-                self.label.text = "Please sign in first"
-                self.label.font.withSize(36);
-            }
+            self.updateView(user: user)
+        }
+        self.updateView(user: Auth.auth().currentUser)
+    }
+    
+    func updateView(user: User?) {
+        if user == nil {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "",
+                                                                     style: .plain,
+                                                                     target: self,
+                                                                     action: #selector(self.logout))
+            
+            //                print("User changed \(String(describing: user))")
+            self.title = ""
+            self.label.text = "Please sign in first"
+            self.label.font.withSize(36);
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out",
+                                                                     style: .plain,
+                                                                     target: self,
+                                                                     action: #selector(self.logout))
+            
+            
+            self.title = "Profile"
+            self.label.text = "Signed in as \(String(describing: user?.uid))"
+            
         }
     }
     
