@@ -20,10 +20,18 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate.self = self
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
-                                                                 target: self,
-                                                                 action: #selector(self.logout))
-        
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.,
+//                                                                 target: self,
+//                                                                 action: #selector(self.logout))
+//        actionController.addAction(UIAlertAction(title: "Sign Out",
+//                                                 style: .destructive,
+//                                                 handler: { (action) in
+//                                                    self.appDelegate.handleLogout()
+//        }))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(self.logout))
         self.updateLabel()
     }
     
@@ -31,7 +39,8 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
         if let user = Auth.auth().currentUser {
             self.label.text = "Signed in as \(String(describing: user.uid))"
         } else {
-            self.label.text = "Please sign In first"
+            self.label.text = "Please sign in first"
+            self.label.font.withSize(36);
         }
     }
     
