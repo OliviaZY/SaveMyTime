@@ -17,4 +17,5 @@ target 'SaveMyTime' do
   pod 'PieCharts'
   pod 'MaterialComponents/Cards'
   pod 'SKFontAwesomeIconPickerView', :git => 'https://github.com/sag333ar/SKFontAwesomeIconPickerView.git', :branch => 'master'
+  pod 'SwiftHSVColorPicker'
 end

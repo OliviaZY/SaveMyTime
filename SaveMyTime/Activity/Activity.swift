@@ -40,6 +40,7 @@ class Activity {
         default:
             return UIColor.gray
         }
+        
     }
     
     var data: [String: Any] {

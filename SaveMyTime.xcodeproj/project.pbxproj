@@ -28,6 +28,7 @@
 		A077D541209AA83600B6C83A /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		A08080A3209AA9440067A716 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08080A2209AA9440067A716 /* ProfileViewController.storyboard */; };
 		A08080A5209AA9D60067A716 /* TimeLineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */; };
+		A0811C5F20A94552007C8078 /* colorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0811C5E20A94552007C8078 /* colorPicker.swift */; };
 		A0B84C402071E17E009B34D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */; };
 		A0B84C452071E17E009B34D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B84C432071E17E009B34D6 /* Main.storyboard */; };
 		A0B84C4A2071E17E009B34D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B84C492071E17E009B34D6 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		47F03F2A2091513F007C3316 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		A08080A2209AA9440067A716 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		A08080A4209AA9D60067A716 /* TimeLineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeLineViewController.storyboard; sourceTree = "<group>"; };
+		A0811C5E20A94552007C8078 /* colorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPicker.swift; sourceTree = "<group>"; };
 		A0B84C3C2071E17D009B34D6 /* SaveMyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveMyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84C3F2071E17E009B34D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B84C442071E17E009B34D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				478571AE209B3B1B00BF685B /* Activity.swift */,
 				478571B0209B3C9E00BF685B /* ActivityCollectionViewCell.swift */,
 				47A0DA62209C98C600CE8AC7 /* ActivityDetailViewController.swift */,
+				A0811C5E20A94552007C8078 /* colorPicker.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				"${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SKFontAwesomeIconPickerView/SKFontAwesomeIconPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftHSVColorPicker/SwiftHSVColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -391,6 +395,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PieCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKFontAwesomeIconPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHSVColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -421,6 +426,7 @@
 				47E5B2A520A40D0A0051B1C3 /* Record.swift in Sources */,
 				478571AF209B3B1B00BF685B /* Activity.swift in Sources */,
 				47E5B2A020A40AE90051B1C3 /* TimeLineTableViewCell.swift in Sources */,
+				A0811C5F20A94552007C8078 /* colorPicker.swift in Sources */,
 				47BC82F7209A2C0200265A62 /* TimeLineViewController.swift in Sources */,
 				47E5B29E20A3F1CC0051B1C3 /* DrawerExtension.swift in Sources */,
 				478571B1209B3C9E00BF685B /* ActivityCollectionViewCell.swift in Sources */,
