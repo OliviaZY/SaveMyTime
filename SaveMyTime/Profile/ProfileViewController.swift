@@ -57,10 +57,12 @@ class ProfileViewController: UIViewController, GIDSignInUIDelegate {
                                                                      target: self,
                                                                      action: #selector(self.logout))
             
-            
+            googleLoginButton.isEnabled = false
+//            googleLoginButton.isHidden = true
+//            googleLoginButton = kCFURLIsHiddenKey
             self.title = "Profile"
             self.label.text = "Signed in as \(String(describing: user?.uid))"
-            
+            setUpDrawer()
         }
     }
     
