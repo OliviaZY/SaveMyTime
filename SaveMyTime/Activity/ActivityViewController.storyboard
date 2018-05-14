@@ -139,6 +139,59 @@
             </objects>
             <point key="canvasLocation" x="2895" y="690"/>
         </scene>
+        <!--Color Pick View Controller-->
+        <scene sceneID="0UC-Lo-5jh">
+            <objects>
+                <viewController id="NwF-ot-wfU" customClass="ColorPickViewController" customModule="SwiftHSVColorPicker" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ere-Da-rAM"/>
+                        <viewControllerLayoutGuide type="bottom" id="IgQ-FR-MjL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fqv-1x-ljQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKJ-xq-2Dh" customClass="SwiftHSVColorPicker" customModule="SwiftHSVColorPickerExample" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="50" width="300" height="388"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="388" id="rTS-Eq-bCZ"/>
+                                    <constraint firstAttribute="width" constant="300" id="wZo-Pz-R1L"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3e-wM-Jwz">
+                                <rect key="frame" x="62.5" y="466" width="250" height="44"/>
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="EQW-PP-2vW"/>
+                                    <constraint firstAttribute="height" constant="44" id="HXG-aU-Dzy"/>
+                                </constraints>
+                                <color key="tintColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Select color">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getSelectedColor:" destination="NwF-ot-wfU" eventType="touchUpInside" id="IFU-8v-gh1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UKJ-xq-2Dh" firstAttribute="top" secondItem="Ere-Da-rAM" secondAttribute="bottom" constant="30" id="6wU-Un-zMC"/>
+                            <constraint firstAttribute="centerX" secondItem="O3e-wM-Jwz" secondAttribute="centerX" id="bDa-je-JQs"/>
+                            <constraint firstItem="O3e-wM-Jwz" firstAttribute="top" secondItem="UKJ-xq-2Dh" secondAttribute="bottom" constant="28" id="eVZ-f8-iZ0"/>
+                            <constraint firstAttribute="centerX" secondItem="UKJ-xq-2Dh" secondAttribute="centerX" id="fEr-gC-pV5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ei3-EW-VXY"/>
+                    </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="UKJ-xq-2Dh" id="kQh-QC-A2m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G19-c6-peI" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="FB" width="300" height="300"/>

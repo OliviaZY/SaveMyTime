@@ -14,6 +14,8 @@ class Activity {
     var category: String
     var created: Date
     var colorName: String?
+//    let trycolorPicker = colorPicker(frame: CGRectMake(10, 20, 300, 400))
+//    self.view.addSubview(trycolorPicker)
     
     init(data: [String: Any], id: String?) {
         self.id = id
@@ -40,6 +42,7 @@ class Activity {
         default:
             return UIColor.gray
         }
+        
         
     }
     

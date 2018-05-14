@@ -26,12 +26,38 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         alertController.addTextField { (textField) in
             textField.placeholder = "Name"
         }
+        
+        
+//        let alertController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+//
+//        let margin:CGFloat = 10.0
+//        let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 4.0, height: 120)
+//        let customView = UIView(frame: rect)
+//
+//        customView.backgroundColor = .green
+//        alertController.view.addSubview(customView)
+//
+//        let somethingAction = UIAlertAction(title: "Something", style: .default, handler: {(alert: UIAlertAction!) in print("something")})
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+//
+//        alertController.addAction(somethingAction)
+//        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion:{})
         alertController.addTextField { (textField) in
             textField.placeholder = "Category"
+//            alertController.add
         }
+//        UIViewController.addChildViewController(ColorPickViewController)
+        
         alertController.addTextField { (textField) in
             textField.placeholder = "ColorName"
         }
+        
+        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        self.view.addSubview(colorPicker)
+        print("hhh im here")
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: UIAlertActionStyle.cancel,
                                          handler: nil)

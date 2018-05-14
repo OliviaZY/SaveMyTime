@@ -109,7 +109,7 @@ PODS:
   - PieCharts (0.0.6)
   - Protobuf (3.5.0)
   - SKFontAwesomeIconPickerView (0.0.5)
-  - SwiftHSVColorPicker (1.1.1)
+  - SwiftHSVColorPicker (1.1.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -121,7 +121,7 @@ DEPENDENCIES:
   - MaterialComponents/Cards
   - PieCharts
   - SKFontAwesomeIconPickerView (from `https://github.com/sag333ar/SKFontAwesomeIconPickerView.git`, branch `master`)
-  - SwiftHSVColorPicker
+  - SwiftHSVColorPicker (from `https://github.com/johankasperi/SwiftHSVColorPicker.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -147,17 +147,22 @@ SPEC REPOS:
     - nanopb
     - PieCharts
     - Protobuf
-    - SwiftHSVColorPicker
 
 EXTERNAL SOURCES:
   SKFontAwesomeIconPickerView:
     :branch: master
     :git: https://github.com/sag333ar/SKFontAwesomeIconPickerView.git
+  SwiftHSVColorPicker:
+    :branch: master
+    :git: https://github.com/johankasperi/SwiftHSVColorPicker.git
 
 CHECKOUT OPTIONS:
   SKFontAwesomeIconPickerView:
     :commit: e3539a7d9f63e89530f874b048e0e8fa34a118c0
     :git: https://github.com/sag333ar/SKFontAwesomeIconPickerView.git
+  SwiftHSVColorPicker:
+    :commit: 5888502983276668e555e3d7b64f65304248e5b2
+    :git: https://github.com/johankasperi/SwiftHSVColorPicker.git
 
 SPEC CHECKSUMS:
   BoringSSL: bdc80ba92b7a274864033629f50f3fdd39c6514f
@@ -183,8 +188,8 @@ SPEC CHECKSUMS:
   PieCharts: f4f866b3ed45dbeda355cc64664091024a9819ee
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SKFontAwesomeIconPickerView: 8b121a69515f95b7f0866fa3b0b1bab0579805ba
-  SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
+  SwiftHSVColorPicker: 70e8baf5e2191886b24ef467a0044f4698f68b6b
 
-PODFILE CHECKSUM: 46e94e429d6cb76c9824604cbc5ce9bbb2f4b489
+PODFILE CHECKSUM: 6b9b1367e8aa0fb7481a8c00caa0a4e7590fa801
 
 COCOAPODS: 1.5.0
