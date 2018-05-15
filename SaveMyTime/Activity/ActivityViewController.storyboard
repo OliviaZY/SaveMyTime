@@ -42,16 +42,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-HV-Cgr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="111" height="105"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="105" id="2qO-fS-Iha"/>
-                                                        <constraint firstAttribute="width" constant="111" id="6Sf-6J-fjd"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XD-Ok-fdU">
-                                                    <rect key="frame" x="35" y="114" width="42" height="61"/>
+                                                    <rect key="frame" x="35" y="154.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8o-YA-45o">
+                                                    <rect key="frame" x="35" y="66" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -59,14 +59,11 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="2XD-Ok-fdU" firstAttribute="leading" secondItem="04f-bn-H3u" secondAttribute="leadingMargin" constant="27" id="2Jt-JQ-nMU"/>
-                                            <constraint firstAttribute="trailing" secondItem="BR6-HV-Cgr" secondAttribute="trailing" constant="2" id="3du-pd-qmL"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="2XD-Ok-fdU" secondAttribute="bottom" constant="-8" id="gBT-Rv-nb5"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2XD-Ok-fdU" secondAttribute="trailingMargin" id="jtM-hT-pV8"/>
-                                            <constraint firstItem="BR6-HV-Cgr" firstAttribute="top" secondItem="04f-bn-H3u" secondAttribute="top" id="kNc-EJ-Jnq"/>
-                                            <constraint firstItem="2XD-Ok-fdU" firstAttribute="top" secondItem="BR6-HV-Cgr" secondAttribute="bottom" constant="9" id="vqv-4H-1X4"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="iconImageView" destination="BR6-HV-Cgr" id="MJ8-el-hj3"/>
+                                            <outlet property="iconLabel" destination="h8o-YA-45o" id="85g-be-vSg"/>
                                             <outlet property="labelView" destination="2XD-Ok-fdU" id="fvN-mm-MdM"/>
                                             <segue destination="bjJ-AS-DlR" kind="show" identifier="activityDetail" id="zSr-ir-9bd"/>
                                         </connections>
