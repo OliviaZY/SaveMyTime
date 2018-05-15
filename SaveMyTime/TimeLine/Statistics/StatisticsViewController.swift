@@ -33,7 +33,7 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.activities = [String: Activity]()
             for doc in snapshot.documents {
                 let activity = Activity(data: doc.data(), id:doc.documentID)
-                self.activities[activity.category] = activity
+                self.activities[activity.category!] = activity
             }
         }
         

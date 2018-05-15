@@ -80,7 +80,7 @@
                                 </constraints>
                                 <state key="normal" image="FB"/>
                                 <connections>
-                                    <action selector="pressAddButton:" destination="dzZ-jn-dGl" eventType="touchUpInside" id="ARp-ot-zo0"/>
+                                    <segue destination="bjJ-AS-DlR" kind="show" identifier="activityCreate" id="k35-Yf-Bma"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,22 +113,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awC-4C-Jgs">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awC-4C-Jgs">
                                 <rect key="frame" x="180" y="69" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="fgD-S8-2pf"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEV-j4-JVy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEV-j4-JVy">
                                 <rect key="frame" x="40" y="72" width="111" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3B1-Qq-OR1" customClass="SwiftHSVColorPicker" customModule="SwiftHSVColorPickerExample" customModuleProvider="target">
+                                <rect key="frame" x="40" y="167" width="300" height="388"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="388" id="4iF-3W-00j"/>
+                                    <constraint firstAttribute="width" constant="300" id="WdN-JS-QrC"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGD-Zz-lyM">
+                                <rect key="frame" x="65" y="583" width="250" height="44"/>
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9sD-Vg-a9s"/>
+                                    <constraint firstAttribute="width" constant="250" id="b1a-oF-K1L"/>
+                                </constraints>
+                                <color key="tintColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Select color">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getSelectedColor:" destination="NwF-ot-wfU" eventType="touchUpInside" id="uia-OA-HQk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="XGD-Zz-lyM" secondAttribute="trailing" constant="60" id="3sF-Mq-7u6"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="bottom" secondItem="XGD-Zz-lyM" secondAttribute="bottom" constant="40" id="58W-O8-5Md"/>
+                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="top" secondItem="3B1-Qq-OR1" secondAttribute="bottom" constant="28" id="L39-dX-ABv"/>
+                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="65" id="PQb-9A-MWh"/>
+                            <constraint firstItem="awC-4C-Jgs" firstAttribute="leading" secondItem="aEV-j4-JVy" secondAttribute="trailing" constant="29" id="Tlz-Hy-OWL"/>
+                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="top" secondItem="3B1-Qq-OR1" secondAttribute="bottom" constant="28" id="bNe-c2-ZcS"/>
+                            <constraint firstItem="awC-4C-Jgs" firstAttribute="baseline" secondItem="aEV-j4-JVy" secondAttribute="baseline" id="cjV-3T-zTF"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="bottom" secondItem="XGD-Zz-lyM" secondAttribute="bottom" constant="40" id="hFe-8l-sdd"/>
+                            <constraint firstItem="3B1-Qq-OR1" firstAttribute="top" secondItem="awC-4C-Jgs" secondAttribute="bottom" constant="68" id="hwt-dZ-QbL"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="3B1-Qq-OR1" secondAttribute="trailing" constant="35" id="jWA-2c-W7F"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="awC-4C-Jgs" secondAttribute="trailing" constant="98" id="kSH-Yg-wQc"/>
+                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="centerX" secondItem="3B1-Qq-OR1" secondAttribute="centerX" id="qYz-0y-F8p"/>
+                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="65" id="vFc-L7-Yd4"/>
+                            <constraint firstItem="3B1-Qq-OR1" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="40" id="ymo-Le-QOW"/>
+                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="top" secondItem="3B1-Qq-OR1" secondAttribute="bottom" constant="28" id="zBX-Aj-e1u"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="drD-rp-fPf"/>
                     </view>
                     <connections>
@@ -197,4 +239,7 @@
         <image name="FB" width="300" height="300"/>
         <image name="list" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="k35-Yf-Bma"/>
+    </inferredMetricsTieBreakers>
 </document>

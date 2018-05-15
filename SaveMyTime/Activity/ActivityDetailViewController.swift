@@ -34,7 +34,15 @@ class ActivityDetailViewController: UIViewController {
                 return
             }
             if let snapshot = documentSnap {
-                self.activity = Activity(data: snapshot.data()!, id: snapshot.documentID)
+                if let data = snapshot.data() {
+                    self.activity = Activity(data: data, id: snapshot.documentID)
+                } else {
+                    self.activity = Activity(data: [
+                        "name": "name",
+                        "colorName": "color",
+                        "category": "category",
+                        "created": Date()], id: snapshot.documentID)
+                }
             }
             self.activityNameTextField.text = self.activity?.name
         })

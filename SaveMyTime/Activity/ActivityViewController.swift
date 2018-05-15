@@ -19,63 +19,6 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func pressAddButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Add a new Activity",
-                                                message: "",
-                                                preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Name"
-        }
-        
-        
-//        let alertController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-//
-//        let margin:CGFloat = 10.0
-//        let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 4.0, height: 120)
-//        let customView = UIView(frame: rect)
-//
-//        customView.backgroundColor = .green
-//        alertController.view.addSubview(customView)
-//
-//        let somethingAction = UIAlertAction(title: "Something", style: .default, handler: {(alert: UIAlertAction!) in print("something")})
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
-//
-//        alertController.addAction(somethingAction)
-//        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion:{})
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Category"
-//            alertController.add
-        }
-//        UIViewController.addChildViewController(ColorPickViewController)
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "ColorName"
-        }
-        
-        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        self.view.addSubview(colorPicker)
-        print("hhh im here")
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: UIAlertActionStyle.cancel,
-                                         handler: nil)
-        let createQuoteAction = UIAlertAction(title: "Create Activity Type",
-                                              style: UIAlertActionStyle.default) {
-                                                (action) in
-                                                let activity = Activity(
-                                                    data: ["name":alertController.textFields![0].text!,
-                                                     "category":alertController.textFields![1].text!,
-                                                     "colorName":alertController.textFields![2].text!], id:nil)
-                                                self.firebaseActivityRef.addDocument(data: activity.data)
-        }
-        alertController.addAction(cancelAction)
-        alertController.addAction(createQuoteAction)
-        present(alertController, animated: true, completion: nil)
-        
-    }
-    
     static func storyboardInstance() -> ActivityViewController? {
         let storyboard = UIStoryboard(name:String(describing: self), bundle: nil);
         return storyboard.instantiateInitialViewController() as? ActivityViewController
@@ -137,12 +80,12 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
         activityCell.display(self.activities[indexPath.row])
         return activityCell
     }
-
     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         if segue.identifier == "activityDetail" {
             if let indexPath = self.collectionView.indexPathsForSelectedItems?[0] {
                 if let detailVC = segue.destination as? ActivityDetailViewController {
@@ -150,5 +93,10 @@ class ActivityViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
             }
         }
-     }
+        if segue.identifier == "activityCreate" {
+            if let detailVC = segue.destination as? ActivityDetailViewController {
+                detailVC.activityDocumentRef = self.firebaseActivityRef.document()
+            }
+        }
+    }
 }

@@ -10,18 +10,18 @@ import UIKit
 
 class Activity {
     var id: String?
-    var name: String
-    var category: String
-    var created: Date
+    var name: String?
+    var category: String?
+    var created: Date?
     var colorName: String?
 //    let trycolorPicker = colorPicker(frame: CGRectMake(10, 20, 300, 400))
 //    self.view.addSubview(trycolorPicker)
     
     init(data: [String: Any], id: String?) {
         self.id = id
-        self.name = data["name"] as! String
-        self.category = data["category"] as! String
-        self.colorName = data["colorName"] as! String
+        self.name = data["name"] as? String
+        self.category = data["category"] as? String 
+        self.colorName = data["colorName"] as? String
         if let d = data["created"] as? Date {
             self.created = d
         } else {
@@ -48,9 +48,9 @@ class Activity {
     
     var data: [String: Any] {
         return [
-            "name": self.name,
+            "name": self.name!,
             "colorName": self.colorName!,
-            "category": self.category,
-            "created": self.created]
+            "category": self.category!,
+            "created": self.created!]
     }
 }
