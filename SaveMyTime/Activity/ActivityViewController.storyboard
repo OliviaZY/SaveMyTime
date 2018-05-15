@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--List-->
         <scene sceneID="hHG-fT-dTs">
@@ -123,117 +128,63 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEV-j4-JVy">
-                                <rect key="frame" x="40" y="72" width="111" height="21"/>
+                                <rect key="frame" x="40" y="72.5" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3B1-Qq-OR1" customClass="SwiftHSVColorPicker" customModule="SwiftHSVColorPicker">
-                                <rect key="frame" x="40" y="167" width="300" height="388"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xtM-Se-TJS">
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3B1-Qq-OR1" customClass="SwiftHSVColorPicker" customModule="SwiftHSVColorPicker">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-YH-rva" customClass="SKFontAwesomePickerView" customModule="SKFontAwesomeIconPickerView">
+                                        <rect key="frame" x="0.0" y="284" width="375" height="284"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="388" id="4iF-3W-00j"/>
-                                    <constraint firstAttribute="width" constant="300" id="WdN-JS-QrC"/>
+                                    <constraint firstItem="oQ6-YH-rva" firstAttribute="height" secondItem="3B1-Qq-OR1" secondAttribute="height" id="9Td-BL-lSj"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGD-Zz-lyM">
-                                <rect key="frame" x="65" y="583" width="250" height="44"/>
-                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9sD-Vg-a9s"/>
-                                    <constraint firstAttribute="width" constant="250" id="b1a-oF-K1L"/>
-                                </constraints>
-                                <color key="tintColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Select color">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="getSelectedColor:" destination="NwF-ot-wfU" eventType="touchUpInside" id="uia-OA-HQk"/>
-                                </connections>
-                            </button>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asfafs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FV7-WW-U65">
+                                <rect key="frame" x="48" y="40" width="95" height="24"/>
+                                <color key="tintColor" red="0.8504322688" green="0.68949129779999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="XGD-Zz-lyM" secondAttribute="trailing" constant="60" id="3sF-Mq-7u6"/>
-                            <constraint firstItem="drD-rp-fPf" firstAttribute="bottom" secondItem="XGD-Zz-lyM" secondAttribute="bottom" constant="40" id="58W-O8-5Md"/>
-                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="top" secondItem="3B1-Qq-OR1" secondAttribute="bottom" constant="28" id="L39-dX-ABv"/>
-                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="65" id="PQb-9A-MWh"/>
+                            <constraint firstItem="FV7-WW-U65" firstAttribute="top" secondItem="drD-rp-fPf" secondAttribute="top" constant="20" id="6I0-BC-Sly"/>
+                            <constraint firstItem="FV7-WW-U65" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="48" id="9Rx-yB-A7D"/>
+                            <constraint firstItem="xtM-Se-TJS" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" id="DBP-13-aI9"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="FV7-WW-U65" secondAttribute="trailing" constant="232" id="IW0-Um-5iT"/>
                             <constraint firstItem="awC-4C-Jgs" firstAttribute="leading" secondItem="aEV-j4-JVy" secondAttribute="trailing" constant="29" id="Tlz-Hy-OWL"/>
-                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="top" secondItem="3B1-Qq-OR1" secondAttribute="bottom" constant="28" id="bNe-c2-ZcS"/>
+                            <constraint firstItem="xtM-Se-TJS" firstAttribute="top" secondItem="awC-4C-Jgs" secondAttribute="bottom" id="U9v-wd-sND"/>
+                            <constraint firstItem="awC-4C-Jgs" firstAttribute="top" secondItem="drD-rp-fPf" secondAttribute="top" constant="49" id="VDI-fQ-6rf"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="xtM-Se-TJS" secondAttribute="trailing" id="Ymu-UM-bYP"/>
                             <constraint firstItem="awC-4C-Jgs" firstAttribute="baseline" secondItem="aEV-j4-JVy" secondAttribute="baseline" id="cjV-3T-zTF"/>
-                            <constraint firstItem="drD-rp-fPf" firstAttribute="bottom" secondItem="XGD-Zz-lyM" secondAttribute="bottom" constant="40" id="hFe-8l-sdd"/>
-                            <constraint firstItem="3B1-Qq-OR1" firstAttribute="top" secondItem="awC-4C-Jgs" secondAttribute="bottom" constant="68" id="hwt-dZ-QbL"/>
-                            <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="3B1-Qq-OR1" secondAttribute="trailing" constant="35" id="jWA-2c-W7F"/>
+                            <constraint firstItem="xtM-Se-TJS" firstAttribute="top" secondItem="drD-rp-fPf" secondAttribute="top" constant="150" id="fzH-vp-Ees"/>
+                            <constraint firstItem="drD-rp-fPf" firstAttribute="bottom" secondItem="xtM-Se-TJS" secondAttribute="bottom" id="hnG-IQ-0Mv"/>
                             <constraint firstItem="drD-rp-fPf" firstAttribute="trailing" secondItem="awC-4C-Jgs" secondAttribute="trailing" constant="98" id="kSH-Yg-wQc"/>
-                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="centerX" secondItem="3B1-Qq-OR1" secondAttribute="centerX" id="qYz-0y-F8p"/>
-                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="65" id="vFc-L7-Yd4"/>
-                            <constraint firstItem="3B1-Qq-OR1" firstAttribute="leading" secondItem="drD-rp-fPf" secondAttribute="leading" constant="40" id="ymo-Le-QOW"/>
-                            <constraint firstItem="XGD-Zz-lyM" firstAttribute="top" secondItem="3B1-Qq-OR1" secondAttribute="bottom" constant="28" id="zBX-Aj-e1u"/>
+                            <constraint firstItem="aEV-j4-JVy" firstAttribute="top" secondItem="FV7-WW-U65" secondAttribute="bottom" constant="8.5" id="lp7-i3-aO7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="drD-rp-fPf"/>
                     </view>
                     <connections>
                         <outlet property="activityNameTextField" destination="awC-4C-Jgs" id="unN-PC-g4B"/>
                         <outlet property="colorPicker" destination="3B1-Qq-OR1" id="dYh-cs-LBa"/>
+                        <outlet property="iconLabel" destination="FV7-WW-U65" id="6Qm-z0-Ezh"/>
+                        <outlet property="iconPicker" destination="oQ6-YH-rva" id="gJf-uE-XiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swi-id-XHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2895" y="690"/>
-        </scene>
-        <!--Color Pick View Controller-->
-        <scene sceneID="0UC-Lo-5jh">
-            <objects>
-                <viewController id="NwF-ot-wfU" customClass="ColorPickViewController" customModule="SwiftHSVColorPicker" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ere-Da-rAM"/>
-                        <viewControllerLayoutGuide type="bottom" id="IgQ-FR-MjL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fqv-1x-ljQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKJ-xq-2Dh" customClass="SwiftHSVColorPicker" customModule="SwiftHSVColorPickerExample" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="50" width="300" height="388"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="388" id="rTS-Eq-bCZ"/>
-                                    <constraint firstAttribute="width" constant="300" id="wZo-Pz-R1L"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3e-wM-Jwz">
-                                <rect key="frame" x="62.5" y="466" width="250" height="44"/>
-                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="EQW-PP-2vW"/>
-                                    <constraint firstAttribute="height" constant="44" id="HXG-aU-Dzy"/>
-                                </constraints>
-                                <color key="tintColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Select color">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="getSelectedColor:" destination="NwF-ot-wfU" eventType="touchUpInside" id="IFU-8v-gh1"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="UKJ-xq-2Dh" firstAttribute="top" secondItem="Ere-Da-rAM" secondAttribute="bottom" constant="30" id="6wU-Un-zMC"/>
-                            <constraint firstAttribute="centerX" secondItem="O3e-wM-Jwz" secondAttribute="centerX" id="bDa-je-JQs"/>
-                            <constraint firstItem="O3e-wM-Jwz" firstAttribute="top" secondItem="UKJ-xq-2Dh" secondAttribute="bottom" constant="28" id="eVZ-f8-iZ0"/>
-                            <constraint firstAttribute="centerX" secondItem="UKJ-xq-2Dh" secondAttribute="centerX" id="fEr-gC-pV5"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ei3-EW-VXY"/>
-                    </view>
-                    <connections>
-                        <outlet property="colorPicker" destination="UKJ-xq-2Dh" id="kQh-QC-A2m"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G19-c6-peI" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="2893.5999999999999" y="689.5052473763119"/>
         </scene>
     </scenes>
     <resources>

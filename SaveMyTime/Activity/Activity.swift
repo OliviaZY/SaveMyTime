@@ -12,6 +12,7 @@ class Activity {
     var id: String?
     var name: String?
     var category: String?
+    var icon: String?
     var created: Date?
     var color: UIColor?
     
@@ -19,6 +20,7 @@ class Activity {
         self.id = id
         self.name = data["name"] as? String
         self.category = data["category"] as? String
+        self.icon = data["icon"] as? String
         self.color = (data["colorName"] as? String)?.toUIColor()
         if let d = data["created"] as? Date {
             self.created = d
@@ -31,6 +33,7 @@ class Activity {
         return [
             "name": self.name!,
             "colorName": self.color!.toString(),
+            "icon": self.icon!,
             "category": self.category!,
             "created": self.created!]
     }

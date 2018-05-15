@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftHSVColorPicker
+import SKFontAwesomeIconPickerView
 
 class ActivityDetailViewController: UIViewController {
     var activity: Activity?
@@ -16,6 +17,8 @@ class ActivityDetailViewController: UIViewController {
     var listener: ListenerRegistration!
     
     @IBOutlet weak var activityNameTextField: UITextField!
+    @IBOutlet weak var iconPicker: SKFontAwesomePickerView!
+    @IBOutlet weak var iconLabel: UILabel!
     
     @IBOutlet var colorPicker: SwiftHSVColorPicker!
     
@@ -28,6 +31,13 @@ class ActivityDetailViewController: UIViewController {
                                                    UIBarButtonItem(barButtonSystemItem: .save,
                                                                    target: self,
                                                                    action: #selector(self.saveActivity))]
+        
+        self.iconPicker.didSelectClosure = { icon in
+            DispatchQueue.main.async {
+                self.activity?.icon = icon
+                self.updateView()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +54,7 @@ class ActivityDetailViewController: UIViewController {
                     self.activity = Activity(data: [
                         "name": "name",
                         "category": "category",
+                        "icon": "",
                         "created": Date()], id: snapshot.documentID)
                     self.activity?.color = UIColor.blue
                 }
@@ -56,6 +67,9 @@ class ActivityDetailViewController: UIViewController {
         self.activityNameTextField.text = self.activity?.name
         if let color = self.activity?.color {
             self.colorPicker.setViewColor(color)
+        }
+        if let icon = self.activity?.icon {
+            self.iconLabel.text = icon
         }
     }
     
