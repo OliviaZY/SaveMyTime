@@ -13,15 +13,13 @@ class Activity {
     var name: String?
     var category: String?
     var created: Date?
-    var colorName: String?
-//    let trycolorPicker = colorPicker(frame: CGRectMake(10, 20, 300, 400))
-//    self.view.addSubview(trycolorPicker)
+    var color: UIColor?
     
     init(data: [String: Any], id: String?) {
         self.id = id
         self.name = data["name"] as? String
-        self.category = data["category"] as? String 
-        self.colorName = data["colorName"] as? String
+        self.category = data["category"] as? String
+        self.color = (data["colorName"] as? String)?.toUIColor()
         if let d = data["created"] as? Date {
             self.created = d
         } else {
@@ -29,28 +27,32 @@ class Activity {
         }
     }
     
-    var color: UIColor {
-        switch self.colorName {
-        case "red":
-            return UIColor.red
-        case "blue":
-            return UIColor.blue
-        case "black":
-            return UIColor.black
-        case "orange":
-            return UIColor.orange
-        default:
-            return UIColor.gray
-        }
-        
-        
-    }
-    
     var data: [String: Any] {
         return [
             "name": self.name!,
-            "colorName": self.colorName!,
+            "colorName": self.color!.toString(),
             "category": self.category!,
             "created": self.created!]
+    }
+}
+
+public extension String {
+    func toUIColor() -> UIColor? {
+        let componentsString = self.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
+        let components = componentsString.components(separatedBy: ", ")
+        if components.count != 3 {
+            return nil
+        }
+        return UIColor(red: CGFloat((components[0] as NSString).floatValue),
+                       green: CGFloat((components[1] as NSString).floatValue),
+                       blue: CGFloat((components[2] as NSString).floatValue),
+                       alpha: CGFloat((components[3] as NSString).floatValue))
+    }
+}
+
+public extension UIColor {
+    func toString() -> String {
+        let components = self.cgColor.components!
+        return "[\(components[0]), \(components[1]), \(components[2]), \(components[3])]"
     }
 }

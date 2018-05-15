@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftHSVColorPicker
 
 class ActivityDetailViewController: UIViewController {
     var activity: Activity?
@@ -16,6 +17,7 @@ class ActivityDetailViewController: UIViewController {
     
     @IBOutlet weak var activityNameTextField: UITextField!
     
+    @IBOutlet var colorPicker: SwiftHSVColorPicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +44,26 @@ class ActivityDetailViewController: UIViewController {
                         "colorName": "color",
                         "category": "category",
                         "created": Date()], id: snapshot.documentID)
+                    self.activity?.color = UIColor.blue
                 }
+                self.updateView()
             }
-            self.activityNameTextField.text = self.activity?.name
         })
+    }
+    
+    func updateView() {
+        self.activityNameTextField.text = self.activity?.name
+        if let color = self.activity?.color {
+            self.colorPicker.setViewColor(color)
+        }
     }
     
     @objc func saveActivity() {
         if let text = self.activityNameTextField.text {
             self.activity?.name = text
+        }
+        if let color = self.colorPicker.color {
+            self.activity?.color = color
         }
         self.activityDocumentRef?.updateData(self.activity!.data)
     }

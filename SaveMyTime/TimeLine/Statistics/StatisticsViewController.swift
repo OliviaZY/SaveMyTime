@@ -68,7 +68,7 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
                     var models = [PieSliceModel]()
                     for (category, time) in self.percentage {
                         if let activity = self.activities[category] {
-                            models.append(PieSliceModel(value: time, color: activity.color, obj: self.activities[category]))
+                            models.append(PieSliceModel(value: time, color: activity.color!, obj: self.activities[category]))
                         }
                     }
                     self.pieChart.models = models
