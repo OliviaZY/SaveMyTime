@@ -37,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         }
         
         let center = UNUserNotificationCenter.current()
+        center.setNotificationCategories([UNNotificationCategory(identifier: "myNotificationCategory",
+                                                                 actions: [],
+                                                                 intentIdentifiers: [],
+                                                                 options: .customDismissAction)])
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         center.requestAuthorization(options: options) { (granted, error) in
             if granted {
@@ -127,6 +131,7 @@ extension UIViewController {
             self.drawerController.setDrawerState(.opened, animated: true)
         }
         let content = UNMutableNotificationContent()
+        content.categoryIdentifier = "myNotificationCategory"
         content.title = "Notification Title"
         content.subtitle = "Notification Subtitle"
         content.body = "Some notification body information to be displayed."
@@ -135,7 +140,7 @@ extension UIViewController {
         
         let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "LocalNotification", content: content, trigger: timeTrigger)
+        let request = UNNotificationRequest(identifier: "myNotificationCategory", content: content, trigger: timeTrigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("\(error.localizedDescription)")
