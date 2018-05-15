@@ -40,7 +40,7 @@ public extension String {
     func toUIColor() -> UIColor? {
         let componentsString = self.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
         let components = componentsString.components(separatedBy: ", ")
-        if components.count != 3 {
+        if components.count != 4 {
             return nil
         }
         return UIColor(red: CGFloat((components[0] as NSString).floatValue),

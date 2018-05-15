@@ -41,7 +41,6 @@ class ActivityDetailViewController: UIViewController {
                 } else {
                     self.activity = Activity(data: [
                         "name": "name",
-                        "colorName": "color",
                         "category": "category",
                         "created": Date()], id: snapshot.documentID)
                     self.activity?.color = UIColor.blue
@@ -65,6 +64,7 @@ class ActivityDetailViewController: UIViewController {
         if let color = self.colorPicker.color {
             self.activity?.color = color
         }
-        self.activityDocumentRef?.updateData(self.activity!.data)
+        print(self.activity!.data)
+        self.activityDocumentRef?.setData(self.activity!.data)
     }
 }
