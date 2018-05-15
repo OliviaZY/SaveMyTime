@@ -65,12 +65,12 @@ class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICol
                         let doc = snapshot.documents[0]
                         let record = Record(data: doc.data(), id: doc.documentID)
                         category = record.category
-                        if category == selectedActivity.category {
+                        if category == selectedActivity.name {
                             record.numTracked = record.numTracked+1
                             record.end = Date()
                             firebaseRecordRef.document(record.id).updateData(record.data)
                         } else {
-                            record.category = selectedActivity.category
+                            record.category = selectedActivity.name
                             record.start = record.end
                             record.end = Date()
                             record.numTracked = 1
@@ -81,7 +81,7 @@ class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICol
                             ["start": Date().addingTimeInterval(-100),
                              "end": Date(),
                              "numTracked": 1,
-                             "category": selectedActivity.category])
+                             "category": selectedActivity.name])
                     }
                     self.tabBarController?.selectedIndex = 0
                 }
