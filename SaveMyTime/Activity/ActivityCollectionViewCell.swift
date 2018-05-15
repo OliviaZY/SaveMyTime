@@ -11,12 +11,12 @@ import MaterialComponents.MaterialCards
 
 class ActivityCollectionViewCell: MDCCardCollectionCell {
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var labelView: UILabel!
     
     func display(_ activity: Activity) {
         self.labelView.text = activity.name
-//        self.iconImageView.text =
+        self.iconLabel.text = activity.icon
         self.backgroundColor = activity.color
     }
 }

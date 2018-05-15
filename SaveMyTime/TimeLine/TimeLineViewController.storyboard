@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Timeline-->
         <scene sceneID="MlU-Fv-fbO">
@@ -52,13 +57,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-Fg-qJa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-Fg-qJa">
                                                     <rect key="frame" x="0.0" y="16" width="243" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-vY-sdZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-vY-sdZ">
                                                     <rect key="frame" x="0.0" y="29.5" width="243" height="8.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <nil key="textColor"/>
@@ -242,16 +247,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y36-Ff-G53">
-                                                    <rect key="frame" x="0.0" y="0.0" width="111" height="105"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="105" id="6Tz-pX-sfD"/>
-                                                        <constraint firstAttribute="width" constant="111" id="O3T-Si-6uE"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7R-PH-HWV">
-                                                    <rect key="frame" x="35" y="114" width="42" height="61"/>
+                                                    <rect key="frame" x="35" y="155" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70i-vq-Ka7">
+                                                    <rect key="frame" x="45" y="87" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -260,13 +265,10 @@
                                         <constraints>
                                             <constraint firstAttribute="bottomMargin" secondItem="u7R-PH-HWV" secondAttribute="bottom" constant="-8" id="5rT-QX-RaB"/>
                                             <constraint firstItem="u7R-PH-HWV" firstAttribute="leading" secondItem="bbH-CS-agG" secondAttribute="leadingMargin" constant="27" id="SXN-sJ-Tqs"/>
-                                            <constraint firstAttribute="trailing" secondItem="y36-Ff-G53" secondAttribute="trailing" constant="2" id="gar-8Z-Kwc"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="u7R-PH-HWV" secondAttribute="trailingMargin" id="lZa-hN-42C"/>
-                                            <constraint firstItem="y36-Ff-G53" firstAttribute="top" secondItem="bbH-CS-agG" secondAttribute="top" id="onP-cJ-GVd"/>
-                                            <constraint firstItem="u7R-PH-HWV" firstAttribute="top" secondItem="y36-Ff-G53" secondAttribute="bottom" constant="9" id="yDb-qB-GHZ"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="iconImageView" destination="y36-Ff-G53" id="Ixu-14-Yb7"/>
+                                            <outlet property="iconLabel" destination="70i-vq-Ka7" id="uG1-Ea-i1y"/>
                                             <outlet property="labelView" destination="u7R-PH-HWV" id="dJn-zz-c2v"/>
                                         </connections>
                                     </collectionViewCell>
@@ -293,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjB-hD-fCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="1299"/>
+            <point key="canvasLocation" x="885.60000000000002" y="1298.5007496251876"/>
         </scene>
     </scenes>
     <resources>
