@@ -22,10 +22,12 @@ class ActivityDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                                 target: self,
-                                                                 action: #selector(self.saveActivity))
-        // Do any additional setup after loading the view.
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .trash,
+                                                                   target: self,
+                                                                   action: #selector(self.deleteActivity)),
+                                                   UIBarButtonItem(barButtonSystemItem: .save,
+                                                                   target: self,
+                                                                   action: #selector(self.saveActivity))]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +66,11 @@ class ActivityDetailViewController: UIViewController {
         if let color = self.colorPicker.color {
             self.activity?.color = color
         }
-        print(self.activity!.data)
         self.activityDocumentRef?.setData(self.activity!.data)
+    }
+    
+    @objc func deleteActivity() {
+        self.activityDocumentRef?.delete()
+        self.navigationController?.popViewController(animated: true)
     }
 }
