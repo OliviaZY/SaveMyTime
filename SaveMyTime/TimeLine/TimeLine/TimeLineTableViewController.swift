@@ -108,8 +108,14 @@ class TimeLineTableViewController: UITableViewController {
                 cell.CategoryNameLabel.text = activity.name
             }
         }
+        let date : Date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+//        let todaysDate = dateFormatter.string(from: date)
+        
         cell.numActionLabel.text = "\(record.numTracked!) tracking actions"
-        cell.TimeSpanLabel.text = "\(record.start!) to \(record.end!)"
+        cell.TimeSpanLabel.text = "\(dateFormatter.string(from: record.start!)) to \(dateFormatter.string(from: record.end!))"
+        print("\(record.start!)")
         cell.timeLengthLabel.text = "\(record.activityLength)"
         return cell
     }
