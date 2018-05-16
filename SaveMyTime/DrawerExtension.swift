@@ -35,13 +35,13 @@ extension KYDrawerController {
             case 0:
                 return TimeLineViewController.storyboardInstance()!
             case 1:
-                navigateViewControllers[viewId] = ActivityViewController.storyboardInstance()
+                return ActivityViewController.storyboardInstance()!
             case 2:
-                navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
+                return ProfileViewController.storyboardInstance()!
             case 3:
-                navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
+                return ProfileViewController.storyboardInstance()!
             case 10:
-                navigateViewControllers[viewId] = ProfileViewController.storyboardInstance()
+                return ProfileViewController.storyboardInstance()!
             default:
                 print("Cannot navigate to viewId of \(viewId)")
             }

@@ -38,6 +38,7 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewWillDisappear(_ animated: Bool) {
         self.listener?.remove()
         self.listener2?.remove()
+        self.pieChart?.clear()
     }
     
     func setUpListener() {
@@ -142,7 +143,6 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
                 models.append(PieSliceModel(value: time, color: activity.color!, obj: self.activities[activityId]))
             }
         }
-        self.pieChart.clear()
         self.pieChart.models = models
         
         let textLayerSettings = PiePlainTextLayerSettings()
