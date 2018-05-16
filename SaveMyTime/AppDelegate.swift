@@ -2,9 +2,10 @@ import UIKit
 import KYDrawerController
 import Firebase
 import GoogleSignIn
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUserNotificationCenterDelegate {
     var drawerController:KYDrawerController?
     
     var window: UIWindow?
@@ -34,6 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             print("User changed \(user)")
         }
+        
+        let center = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        center.requestAuthorization(options: options) { (granted, error) in
+            if granted {
+                application.registerForRemoteNotifications()
+            }
+        }
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
     
@@ -63,6 +73,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                  sourceApplication: sourceApplication,
                                                  annotation: annotation)
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("registering notification successful")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("registering notification failed")
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let content = notification.request.content
+        // Process notification content
+        
+        completionHandler([.alert, .sound]) // Display notification as regular alert and play sound
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let actionIdentifier = response.actionIdentifier
+        
+        switch actionIdentifier {
+        case UNNotificationDismissActionIdentifier: // Notification was dismissed by user
+            // Do something
+            completionHandler()
+        case UNNotificationDefaultActionIdentifier: // App was opened from notification
+            // Do something
+            self.drawerController?.navigateTo(ViewId.TimeLine)
+            completionHandler()
+        default:
+            completionHandler()
+        }
+    }
+    
 }
 
 

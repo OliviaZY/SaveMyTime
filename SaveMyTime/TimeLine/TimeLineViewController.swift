@@ -20,6 +20,8 @@ class TimeLineViewController: UITabBarController {
 
         self.title = "TimeLine"
         self.setUpDrawer()
+        
+        self.tabBarController?.selectedIndex = 1
         // Do any additional setup after loading the view.
     }
 
