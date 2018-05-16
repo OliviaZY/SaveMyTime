@@ -25,7 +25,7 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         
         self.firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
-        self.firebaseActivityRef.getDocuments {(querySnapshot, error) in
+        self.firebaseActivityRef.addSnapshotListener {(querySnapshot, error) in
             guard let snapshot = querySnapshot else {
                 print("Error fetching quotes.  error: \(error!.localizedDescription)")
                 return

@@ -165,31 +165,31 @@ CHECKOUT OPTIONS:
     :git: https://github.com/johankasperi/SwiftHSVColorPicker.git
 
 SPEC CHECKSUMS:
-  BoringSSL: bdc80ba92b7a274864033629f50f3fdd39c6514f
-  Firebase: 3b4ceb6ede8280e5a83737351405e88722bed80c
-  FirebaseAnalytics: dbb8eb678c84164fb82bb3dc558c83d5b90f9338
-  FirebaseAuth: 3fd7d0657df87baa260d171bf97713ed7846fb57
-  FirebaseCore: 69b9b1668d5ada67e958d42478add58b64e2e2e6
-  FirebaseFirestore: c1a9f688af50ac93f0349940fa3f80ac31e40145
+  BoringSSL: 60dd24df4af296bf41d78e5841dbb95d75f88c0d
+  Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
+  FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
+  FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
+  FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
+  FirebaseFirestore: e92a096ce80c7b4b905d4e9d41dbd944adc9d2a5
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
-  FirebaseStorage: f8456aec65c1b1b684edb20211fb070ca29acb91
+  FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
-  GoogleToolboxForMac: 0417945efb82412f3396303ee85d8b6ae9d7c167
-  gRPC: b19d7d9d54f6c23469224bc6b8a8d185341083ee
-  gRPC-Core: 5fee7fa47b9cd12b2858e7e0dcf7bb0c61aeb23f
-  gRPC-ProtoRPC: c192cae74d49460bbbbacb1252aa961b0a06ae92
-  gRPC-RxLibrary: 547b84124ed9fb3fb11c54ccb17bc21db9cb5574
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  gRPC: 70703dc9ba31c72341fc7f37745cc1c379edee96
+  gRPC-Core: 164639cd8ae18ca8b65477fafb2efbaecf4f181a
+  gRPC-ProtoRPC: bb5fddf3424aa4fad74d76736578a79fe40e244e
+  gRPC-RxLibrary: 26d53d1b1f306befd4ad4e15bd6de27839a82481
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
-  GTMSessionFetcher: 33e3b00bddc669520a5683d96023721d73d27a41
+  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   KYDrawerController: cf5839877c442132123e9d482f458821026defdf
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  MaterialComponents: 70eebf0da374e58d2a060a03af7121d689d0eb5a
+  MaterialComponents: 3399c262334c35e4994a7b25ad1e9a3ce48dce07
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PieCharts: f4f866b3ed45dbeda355cc64664091024a9819ee
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SKFontAwesomeIconPickerView: 8b121a69515f95b7f0866fa3b0b1bab0579805ba
   SwiftHSVColorPicker: 70e8baf5e2191886b24ef467a0044f4698f68b6b
 
-PODFILE CHECKSUM: 6b9b1367e8aa0fb7481a8c00caa0a4e7590fa801
+PODFILE CHECKSUM: 512b9ebf43a173d9c8b8fbb03279974590f8ff3f
 
 COCOAPODS: 1.5.0

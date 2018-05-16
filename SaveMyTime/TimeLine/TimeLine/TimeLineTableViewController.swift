@@ -29,7 +29,7 @@ class TimeLineTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
-        firebaseActivityRef.getDocuments {(querySnapshot, error) in
+        firebaseActivityRef.addSnapshotListener {(querySnapshot, error) in
             guard let snapshot = querySnapshot else {
                 print("Error fetching quotes.  error: \(error!.localizedDescription)")
                 return
