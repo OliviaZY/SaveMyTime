@@ -33,7 +33,7 @@ extension KYDrawerController {
         if (navigateViewControllers[viewId] == nil) {
             switch (viewId) {
             case 0:
-                navigateViewControllers[viewId] = TimeLineViewController.storyboardInstance()
+                return TimeLineViewController.storyboardInstance()!
             case 1:
                 navigateViewControllers[viewId] = ActivityViewController.storyboardInstance()
             case 2:
