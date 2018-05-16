@@ -20,6 +20,8 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     var listener: ListenerRegistration!
     var percentage = [String: Double]()
     var activities = [String: Activity]()
+    var startDate: Date!
+    var endDate: Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,8 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
             }
         }
         
+        self.setUpDate(1)
+        
         self.firebaseRecordRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("timeLine")
     }
     
@@ -52,6 +56,8 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.listener?.remove()
         self.listener = self.firebaseRecordRef
             .order(by: "start", descending:true)
+            .whereField("start", isGreaterThan: self.startDate)
+            .whereField("start", isLessThan: self.endDate)
             .limit(to: 50)
             .addSnapshotListener({ (snapshot, error) in
                 if let error = error {
@@ -123,6 +129,29 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Selected \(row)")
+        self.setUpDate(row)
+    }
+    
+    func setUpDate(_ row: Int) {
+        let now = Date()
+        var startComponent = DateComponents()
+        switch row {
+        case 0:
+            startComponent.year = now.get(Calendar.Component.year)
+            startComponent.month = now.get(Calendar.Component.month)
+            startComponent.day = now.get(Calendar.Component.day)
+        case 1:
+            startComponent.year = now.get(Calendar.Component.year)
+            startComponent.weekOfYear = now.get(Calendar.Component.weekOfYear)
+        case 2:
+            startComponent.year = now.get(Calendar.Component.year)
+            startComponent.month = now.get(Calendar.Component.month)
+        case 3:
+            startComponent.year = now.get(Calendar.Component.year)
+        default:
+            break
+        }
+        self.startDate = calendar.date(from: startComponent)
+        self.endDate = now
     }
 }
