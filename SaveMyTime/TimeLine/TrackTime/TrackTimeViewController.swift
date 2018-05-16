@@ -9,6 +9,7 @@
 import UIKit
 import SKFontAwesomeIconPickerView
 import Firebase
+import UserNotifications
 
 class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -84,6 +85,28 @@ class TrackTimeViewController: UIViewController, UICollectionViewDelegate, UICol
                              "category": selectedActivity.name])
                     }
                     self.tabBarController?.selectedIndex = 0
+                    
+                    // schedule a notification to remind
+                    let content = UNMutableNotificationContent()
+                    content.title = "Notification Title"
+                    content.subtitle = "Notification Subtitle"
+                    content.body = "Some notification body information to be displayed."
+                    content.badge = 1
+                    content.sound = UNNotificationSound.default()
+                    
+                    let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1*60, repeats: false)
+                    
+                    let request = UNNotificationRequest(identifier: "LocalNotification", content: content, trigger: timeTrigger)
+                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    UNUserNotificationCenter.current().add(request) { error in
+                        if let error = error {
+                            print("\(error.localizedDescription)")
+                            // Do something with error
+                        } else {
+                            print("successful")
+                            // Request was added successfully
+                        }
+                    }
                 }
             })
     }

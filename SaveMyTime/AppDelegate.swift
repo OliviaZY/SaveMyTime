@@ -98,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             completionHandler()
         case UNNotificationDefaultActionIdentifier: // App was opened from notification
             // Do something
+            self.drawerController?.navigateTo(ViewId.TimeLine)
             completionHandler()
         default:
             completionHandler()
@@ -125,25 +126,6 @@ extension UIViewController {
     @objc func didTapOpenButton(_ sender: UIBarButtonItem) {
         if Auth.auth().currentUser != nil {
             self.drawerController.setDrawerState(.opened, animated: true)
-        }
-        let content = UNMutableNotificationContent()
-        content.title = "Notification Title"
-        content.subtitle = "Notification Subtitle"
-        content.body = "Some notification body information to be displayed."
-        content.badge = 1
-        content.sound = UNNotificationSound.default()
-        
-        let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "LocalNotification", content: content, trigger: timeTrigger)
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("\(error.localizedDescription)")
-                // Do something with error
-            } else {
-                print("successful")
-                // Request was added successfully
-            }
         }
     }
     
