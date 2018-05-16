@@ -33,7 +33,7 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.activities = [String: Activity]()
             for doc in snapshot.documents {
                 let activity = Activity(data: doc.data(), id:doc.documentID)
-                self.activities[activity.category!] = activity
+                self.activities[activity.id!] = activity
             }
         }
         
@@ -63,7 +63,7 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
                     self.percentage = [String: Double]()
                     for doc in snapshot.documents {
                         let record = Record(data: doc.data(), id:doc.documentID)
-                        self.percentage[record.category] = self.percentage[record.category] ?? 0 + record.activityLength
+                        self.percentage[record.categoryId!] = self.percentage[record.categoryId!] ?? 0 + record.activityLength
                     }
                     var models = [PieSliceModel]()
                     for (category, time) in self.percentage {

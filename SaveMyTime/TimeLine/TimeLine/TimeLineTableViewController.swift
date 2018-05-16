@@ -21,11 +21,25 @@ class TimeLineTableViewController: UITableViewController {
     var firebaseRecordRef: CollectionReference!
     var listener: ListenerRegistration!
     
+    var activities = [String: Activity]()
     var records: [[Record]] = [[Record]]()
     var now = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
+        firebaseActivityRef.getDocuments {(querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("Error fetching quotes.  error: \(error!.localizedDescription)")
+                return
+            }
+            self.activities = [String: Activity]()
+            for doc in snapshot.documents {
+                let activity = Activity(data: doc.data(), id:doc.documentID)
+                self.activities[activity.id!] = activity
+            }
+        }
         
         self.firebaseRecordRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("timeLine")
         
@@ -61,9 +75,9 @@ class TimeLineTableViewController: UITableViewController {
                     var day = -1
                     for doc in snapshot.documents {
                         let record = Record(data: doc.data(), id:doc.documentID)
-                        if record.end.get(.day) != day {
+                        if record.end!.get(.day) != day {
                             self.records.append([record])
-                            day = record.end.get(.day)
+                            day = record.end!.get(.day)
                         } else {
                             self.records[self.records.count-1].append(record)
                         }
@@ -87,7 +101,13 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         let row = self.records[indexPath.section]
         let record = row[indexPath.row]
-        cell.CategoryNameLabel.text = record.category
+        if let id = record.categoryId {
+            if let activity = self.activities[id] {
+                cell.backgroundColor = activity.color
+                cell.iconLabel.text = activity.icon
+                cell.CategoryNameLabel.text = activity.name
+            }
+        }
         cell.numActionLabel.text = "\(record.numTracked!) tracking actions"
         cell.TimeSpanLabel.text = "\(record.start!) to \(record.end!)"
         cell.timeLengthLabel.text = "\(record.activityLength)"

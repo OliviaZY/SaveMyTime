@@ -10,8 +10,8 @@ import UIKit
 
 class TimeLineTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var logoImageView: UIImageView!
     
+    @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var CategoryNameLabel: UILabel!
     @IBOutlet weak var TimeSpanLabel: UILabel!
     @IBOutlet weak var numActionLabel: UILabel!
