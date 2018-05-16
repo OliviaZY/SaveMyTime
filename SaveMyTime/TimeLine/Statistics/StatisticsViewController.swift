@@ -15,9 +15,9 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var timeSpanPicker: UIPickerView!
     @IBOutlet weak var pieChart: PieChart!
     
-    var firebaseActivityRef: CollectionReference!
     var firebaseRecordRef: CollectionReference!
     var listener: ListenerRegistration!
+    var listener2: ListenerRegistration!
     var percentage = [String: Double]()
     var activities = [String: Activity]()
     var startDate: Date!
@@ -25,19 +25,6 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
-        self.firebaseActivityRef.addSnapshotListener {(querySnapshot, error) in
-            guard let snapshot = querySnapshot else {
-                print("Error fetching quotes.  error: \(error!.localizedDescription)")
-                return
-            }
-            self.activities = [String: Activity]()
-            for doc in snapshot.documents {
-                let activity = Activity(data: doc.data(), id:doc.documentID)
-                self.activities[activity.id!] = activity
-            }
-        }
         
         self.setUpDate(1)
         
@@ -50,9 +37,25 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewWillDisappear(_ animated: Bool) {
         self.listener?.remove()
+        self.listener2?.remove()
     }
     
     func setUpListener() {
+        let firebaseActivityRef = Firestore.firestore().collection("user").document(getloggedInUid()).collection("activity")
+        self.listener2?.remove()
+        self.listener2 = firebaseActivityRef.addSnapshotListener {(querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                print("Error fetching quotes.  error: \(error!.localizedDescription)")
+                return
+            }
+            self.activities = [String: Activity]()
+            for doc in snapshot.documents {
+                let activity = Activity(data: doc.data(), id:doc.documentID)
+                self.activities[activity.id!] = activity
+            }
+            self.updatePieChart()
+        }
+        
         self.listener?.remove()
         self.listener = self.firebaseRecordRef
             .order(by: "start", descending:true)
@@ -71,31 +74,8 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
                         let record = Record(data: doc.data(), id:doc.documentID)
                         self.percentage[record.categoryId!] = self.percentage[record.categoryId!] ?? 0 + record.activityLength
                     }
-                    var models = [PieSliceModel]()
-                    for (category, time) in self.percentage {
-                        if let activity = self.activities[category] {
-                            models.append(PieSliceModel(value: time, color: activity.color!, obj: self.activities[category]))
-                        }
-                    }
-                    self.pieChart.models = models
                     
-                    
-                    let textLayerSettings = PiePlainTextLayerSettings()
-                    textLayerSettings.viewRadius = 80
-                    textLayerSettings.label.font = UIFont.systemFont(ofSize: 8)
-                    let formatter = NumberFormatter()
-                    formatter.maximumFractionDigits = 1
-                    textLayerSettings.label.textGenerator = {slice in
-                        let percentageStr = formatter.string(from: slice.data.percentage * 100 as NSNumber).map{"\($0)%"} ?? ""
-                        let activity = slice.data.model.obj as! Activity
-                        let text =  "\(activity.category) \(percentageStr)"
-                        print(text)
-                        return text
-                    }
-                    
-                    let textLayer = PiePlainTextLayer()
-                    textLayer.settings = textLayerSettings
-                    self.pieChart.layers = [textLayer]
+                    self.updatePieChart()
                 }
             })
     }
@@ -153,5 +133,33 @@ class StatisticsViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
         self.startDate = calendar.date(from: startComponent)
         self.endDate = now
+    }
+    
+    func updatePieChart() {
+        var models = [PieSliceModel]()
+        for (activityId, time) in self.percentage {
+            if let activity = self.activities[activityId] {
+                models.append(PieSliceModel(value: time, color: activity.color!, obj: self.activities[activityId]))
+            }
+        }
+        self.pieChart.clear()
+        self.pieChart.models = models
+        
+        let textLayerSettings = PiePlainTextLayerSettings()
+        textLayerSettings.viewRadius = 80
+        textLayerSettings.label.font = UIFont.systemFont(ofSize: 8)
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 1
+        textLayerSettings.label.textGenerator = {slice in
+            let percentageStr = formatter.string(from: slice.data.percentage * 100 as NSNumber).map{"\($0)%"} ?? ""
+            let activity = slice.data.model.obj as! Activity
+            let text =  "\(activity.name!) \(percentageStr)"
+            print(text)
+            return text
+        }
+        
+        let textLayer = PiePlainTextLayer()
+        textLayer.settings = textLayerSettings
+        self.pieChart.layers = [textLayer]
     }
 }
